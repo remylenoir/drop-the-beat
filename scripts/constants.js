@@ -8,31 +8,24 @@ const BASE_ZONE = document.querySelector(".base-zone");
 // OBJECTS
 const MUSIC = {
   techno: {
-    gender: "Techno",
+    gender: "TECHNO",
     bpm: 128,
     color: "#0ffff0",
     types: {
       beat: {
-        type: "beat",
+        type: "BEAT",
         audio: `${SOUNDS_DIRECTORY}/techno-beat.mp3`
       },
-      fx: {
-        type: "fx",
-        audio: `${SOUNDS_DIRECTORY}/techno-fx.mp3`
-      }
-    }
-  },
-  latino: {
-    gender: "Latino",
-    bpm: 128,
-    color: "#0ffff0",
-    types: {
-      beat: {
-        type: "beat",
-        audio: `${SOUNDS_DIRECTORY}/techno-beat.mp3`
+      bass: {
+        type: "BASS",
+        audio: `${SOUNDS_DIRECTORY}/techno-bass.mp3`
+      },
+      clap: {
+        type: "CLAP",
+        audio: `${SOUNDS_DIRECTORY}/techno-clap.mp3`
       },
       fx: {
-        type: "fx",
+        type: "FX",
         audio: `${SOUNDS_DIRECTORY}/techno-fx.mp3`
       }
     }

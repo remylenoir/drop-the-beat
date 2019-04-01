@@ -27,6 +27,12 @@ class TechnoBox extends Box {
       case MUSIC.techno.types.beat.type:
         this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
         break;
+      case MUSIC.techno.types.bass.type:
+        this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
+        break;
+      case MUSIC.techno.types.clap.type:
+        this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
+        break;
       case MUSIC.techno.types.fx.type:
         this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
         break;
@@ -40,10 +46,14 @@ class TechnoBox extends Box {
 const TECHNO_BEAT = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.beat.type);
 console.log("TCL: TECHNO_BEAT", TECHNO_BEAT);
 
+const TECHNO_BASS = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.bass.type);
+
+const TECHNO_CLAP = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.clap.type);
+
 const TECHNO_FX = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.fx.type);
 console.log("TCL: TECHNO_FX", TECHNO_FX);
 
-const TECHNO_GROUP = new buzz.group([TECHNO_BEAT.audio, TECHNO_FX.audio]);
+let TECHNO_GROUP = new buzz.group([TECHNO_CLAP.audio]);
 
 // -------- //
 
