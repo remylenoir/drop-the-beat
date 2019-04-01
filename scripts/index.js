@@ -55,6 +55,10 @@ console.log("TCL: TECHNO_FX", TECHNO_FX);
 
 let TECHNO_GROUP = new buzz.group([TECHNO_CLAP.audio]);
 
+for (let key in MUSIC) {
+  console.log(key);
+}
+
 // -------- //
 
 // CONTROLS
@@ -64,14 +68,6 @@ document.querySelector("#play").addEventListener("click", evt => {
 document.querySelector("#stop").addEventListener("click", evt => {
   TECHNO_GROUP.stop();
 });
-
-function addClass(element, className) {
-  if (element.classList) {
-    return element.classList.add(className);
-  } else {
-    element.className += " " + className;
-  }
-}
 
 // -------- //
 
