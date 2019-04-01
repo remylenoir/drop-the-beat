@@ -18,16 +18,16 @@ class Box {
 class TechnoBox extends Box {
   constructor(color, type) {
     super();
-    this.gender = "Techno";
-    this.bpm = "128";
+    this.gender = MUSIC.techno.gender;
+    this.bpm = MUSIC.techno.bpm;
     this.type = type;
     this.boxElement.style.backgroundColor = color;
 
     switch (type) {
-      case "beat":
+      case MUSIC.techno.types.beat.type:
         this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
         break;
-      case "fx":
+      case MUSIC.techno.types.fx.type:
         this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
         break;
     }
@@ -38,7 +38,10 @@ class TechnoBox extends Box {
 
 // TECHNO OBJECTS
 const TECHNO_BEAT = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.beat.type);
+console.log("TCL: TECHNO_BEAT", TECHNO_BEAT);
+
 const TECHNO_FX = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.fx.type);
+console.log("TCL: TECHNO_FX", TECHNO_FX);
 
 const TECHNO_GROUP = new buzz.group([TECHNO_BEAT.audio, TECHNO_FX.audio]);
 
