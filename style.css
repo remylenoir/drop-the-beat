@@ -23,7 +23,7 @@ body {
 }
 
 .box-container {
-  width: 500px;
+  width: 100vw;
   height: 200px;
   margin: 30px 0;
   display: flex;
@@ -39,18 +39,33 @@ body {
   background-color: #e9e9e9;
 }
 
-.box-holder, .box {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  border-radius: 10px;
-  background-color: aquamarine
+.box {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  background-color: #e9e9e9
 }
 
 .box {
   touch-action: none;
   user-select: none;
+  /* animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite; */
 }
+
+/* 
+@keyframes floating {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+} */
 
 button {
   width: 80px;

@@ -19,22 +19,44 @@ class TechnoBox extends Box {
   constructor(color, type) {
     super();
     this.gender = MUSIC.techno.gender;
-    this.bpm = MUSIC.techno.bpm;
+    this.type = type;
+    this.boxElement.style.backgroundColor = color;
+
+    console.log(type);
+
+    switch (type) {
+      case "BEAT":
+        this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
+        break;
+      case "BASS":
+        this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
+        break;
+      case "CLAP":
+        this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
+        break;
+      case "FX":
+        this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
+        break;
+    }
+  }
+}
+
+class LatinBox extends Box {
+  constructor(color, type) {
+    super();
+    this.gender = MUSIC.latin.gender;
     this.type = type;
     this.boxElement.style.backgroundColor = color;
 
     switch (type) {
-      case MUSIC.techno.types.beat.type:
-        this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
+      case "BEAT":
+        this.audio = new buzz.sound(MUSIC.latin.types.beat.audio);
         break;
-      case MUSIC.techno.types.bass.type:
-        this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
+      case "BASS":
+        this.audio = new buzz.sound(MUSIC.latin.types.bass.audio);
         break;
-      case MUSIC.techno.types.clap.type:
-        this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
-        break;
-      case MUSIC.techno.types.fx.type:
-        this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
+      case "CONGA":
+        this.audio = new buzz.sound(MUSIC.latin.types.conga.audio);
         break;
     }
   }
@@ -42,31 +64,67 @@ class TechnoBox extends Box {
 
 // -------- //
 
+const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
+  // let object = music[1];
+  // console.log("Object:", object);
+
+  let color = music[1].color;
+  let genre = music[1].genre;
+  let loop_type = music[1].types;
+
+  const TYPES_ARRAY = Object.entries(loop_type).map(type => {
+    const params = [color, type];
+    const audioFile = type[1].audio;
+
+    if (genre === "TECHNO") {
+      return new TechnoBox(...params), new buzz.sound(audioFile);
+    } else if (genre === "LATIN") {
+      return new LatinBox(...params);
+    }
+  });
+  return TYPES_ARRAY;
+});
+
+var objectsInstances = MUSIC_ARRAY.flat();
+console.log(objectsInstances);
+
+// const TECHNO_BEAT = objectsInstances[0];
+// const TECHNO_BASS = objectsInstances[1];
+// const TECHNO_CLAP = objectsInstances[2];
+// const TECHNO_FX = objectsInstances[3];
+
+// Montasar
+// ^^^^^^^^
+// const array = MUSIC.map(genre => {
+//   let color = genre.color;
+//   // let bpm = genre .bpm
+//   return types.map(type => {
+//       const params = [color, type]
+//       if  (genre === "TECHNO") return new TechnoBox(...params);
+//       else if (1) //                return new LatinBox()
+
+//   })
+// })
+
 // TECHNO OBJECTS
-const TECHNO_BEAT = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.beat.type);
-console.log("TCL: TECHNO_BEAT", TECHNO_BEAT);
+// const TECHNO_BEAT = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.beat.type);
+// const TECHNO_BASS = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.bass.type);
+// const TECHNO_CLAP = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.clap.type);
+// const TECHNO_FX = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.fx.type);
 
-const TECHNO_BASS = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.bass.type);
-
-const TECHNO_CLAP = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.clap.type);
-
-const TECHNO_FX = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.fx.type);
-console.log("TCL: TECHNO_FX", TECHNO_FX);
-
-let TECHNO_GROUP = new buzz.group([TECHNO_CLAP.audio]);
-
-for (let key in MUSIC) {
-  console.log(key);
-}
+// let TECHNO_GROUP = new buzz.group([TECHNO_CLAP.audio]);
 
 // -------- //
 
 // CONTROLS
 document.querySelector("#play").addEventListener("click", evt => {
-  TECHNO_GROUP.loop().play();
+  buzz
+    .all()
+    .loop()
+    .play();
 });
 document.querySelector("#stop").addEventListener("click", evt => {
-  TECHNO_GROUP.stop();
+  buzz.all().stop();
 });
 
 // -------- //
@@ -76,11 +134,14 @@ interact(".drop-zone").dropzone({
   accept: ".box",
   ondrop: function(event) {
     console.log("Dropped in!");
-    TECHNO_GROUP.loop().play();
+    buzz
+      .all()
+      .loop()
+      .play();
   },
   ondragleave: function(event) {
     console.log("Dropped out!");
-    TECHNO_GROUP.stop();
+    buzz.all().stop();
   }
 });
 

@@ -9,8 +9,7 @@ const BASE_ZONE = document.querySelector(".base-zone");
 const MUSIC = {
   techno: {
     genre: "TECHNO",
-    bpm: 128,
-    color: "#0ffff0",
+    color: "#79e18f",
     types: {
       beat: {
         type: "BEAT",
@@ -32,8 +31,7 @@ const MUSIC = {
   },
   latin: {
     genre: "LATIN",
-    bpm: 128,
-    color: "#00ff00",
+    color: "#e17983",
     types: {
       beat: {
         type: "BEAT",
