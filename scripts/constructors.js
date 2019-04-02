@@ -11,6 +11,7 @@ class Box {
 
     this.audioElement = document.createElement("audio");
     this.audioElement.loop = true;
+    this.audioElement.classList.add("audio");
     this.boxElement.appendChild(this.audioElement);
 
     if (color) {

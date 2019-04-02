@@ -45,6 +45,3 @@ const [
 // console.log("Beat:", LATIN_BEAT);
 // console.log("Bass:", LATIN_BASS);
 // console.log("Conga:", LATIN_CONGA);
-
-// console.log(objectsInstances[0].audio); // beat
-// console.log(objectsInstances[1].audio); // bass
