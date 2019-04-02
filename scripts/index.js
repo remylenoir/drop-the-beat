@@ -18,11 +18,11 @@ class Box {
 class TechnoBox extends Box {
   constructor(color, type) {
     super();
-    this.gender = MUSIC.techno.gender;
+    this.genre = MUSIC.techno.genre;
     this.type = type;
     this.boxElement.style.backgroundColor = color;
 
-    console.log(type);
+    //console.log(type);
 
     switch (type) {
       case "BEAT":
@@ -44,7 +44,7 @@ class TechnoBox extends Box {
 class LatinBox extends Box {
   constructor(color, type) {
     super();
-    this.gender = MUSIC.latin.gender;
+    this.genre = MUSIC.latin.genre;
     this.type = type;
     this.boxElement.style.backgroundColor = color;
 
@@ -74,10 +74,10 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 
   const TYPES_ARRAY = Object.entries(loop_type).map(type => {
     const params = [color, type];
-    const audioFile = type[1].audio;
+    // const audioFile = type[1].audio;
 
     if (genre === "TECHNO") {
-      return new TechnoBox(...params), new buzz.sound(audioFile);
+      return new TechnoBox(...params);
     } else if (genre === "LATIN") {
       return new LatinBox(...params);
     }
@@ -86,7 +86,21 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 });
 
 var objectsInstances = MUSIC_ARRAY.flat();
-console.log(objectsInstances);
+
+const [
+  TECHNO_BEAT,
+  TECHNO_BASS,
+  TECHNO_CLAP,
+  TECHNO_FX,
+  LATIN_BEAT,
+  LATIN_BASS,
+  LATIN_CONGA
+] = objectsInstances;
+
+console.log("Beat:", TECHNO_BEAT);
+console.log("Bass:", TECHNO_BASS);
+console.log("Clap:", TECHNO_CLAP);
+console.log("Fx:", TECHNO_FX);
 
 // const TECHNO_BEAT = objectsInstances[0];
 // const TECHNO_BASS = objectsInstances[1];
@@ -118,13 +132,10 @@ console.log(objectsInstances);
 
 // CONTROLS
 document.querySelector("#play").addEventListener("click", evt => {
-  buzz
-    .all()
-    .loop()
-    .play();
+  TECHNO_GROUP.loop().play();
 });
 document.querySelector("#stop").addEventListener("click", evt => {
-  buzz.all().stop();
+  TECHNO_GROUP.stop();
 });
 
 // -------- //
@@ -134,14 +145,11 @@ interact(".drop-zone").dropzone({
   accept: ".box",
   ondrop: function(event) {
     console.log("Dropped in!");
-    buzz
-      .all()
-      .loop()
-      .play();
+    TECHNO_GROUP.loop().play();
   },
   ondragleave: function(event) {
     console.log("Dropped out!");
-    buzz.all().stop();
+    TECHNO_GROUP.stop();
   }
 });
 
