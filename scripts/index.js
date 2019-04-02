@@ -26,7 +26,7 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 });
 
 // Flattening of the Array in order to be destructured
-let objectsInstances = MUSIC_ARRAY.flat();
+// let objectsInstances = MUSIC_ARRAY.flat();
 // Destructuring the Array - THE ORDER MATTERS !!!
 const [
   TECHNO_BEAT,
