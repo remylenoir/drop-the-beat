@@ -33,10 +33,11 @@ const [
   TECHNO_BASS,
   TECHNO_CLAP,
   TECHNO_FX,
+  //
   LATIN_BEAT,
   LATIN_BASS,
   LATIN_CONGA
-] = objectsInstances;
+] = MUSIC_ARRAY;
 
 // console.log("Beat:", TECHNO_BEAT);
 // console.log("Bass:", TECHNO_BASS);
