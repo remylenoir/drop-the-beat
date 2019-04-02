@@ -10,8 +10,8 @@ class Box {
     BASE_ZONE.appendChild(this.boxElement);
 
     this.audioElement = document.createElement("audio");
-    this.audioElement.loop = true;
     this.boxElement.appendChild(this.audioElement);
+    this.audioElement.loop = true;
 
     if (color) {
       this.boxElement.style.backgroundColor = color;

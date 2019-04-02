@@ -1,13 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: "Rubik", sans-serif;
+  background: linear-gradient(135deg, #0FF0B3 0%, #036ED9 100%);
 }
 
 button {
@@ -16,36 +18,50 @@ button {
 }
 
 .container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.box {
-  cursor: pointer;
-  background-color: blueviolet
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10vh;
+}
+
+.drop-zone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #c2c2c2;
+  width: 400px;
+  height: 400px;
+  margin: 40px 0;
+  border-radius: 200px;
+  background-color: #ffffff;
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.drop-zone h2 {
+  font-size: 40px;
 }
 
 .base-zone {
   width: 100vw;
-  height: 200px;
-  margin: 30px 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.drop-zone {
-  width: 400px;
-  height: 400px;
-  border-radius: 200px;
-  background-color: #e9e9e9;
-}
-
 .box {
   touch-action: none;
   user-select: none;
+  cursor: move;
   width: 70px;
   height: 70px;
   border-radius: 10px;
@@ -62,15 +78,17 @@ button {
   background-image: url("assets/images/pause.png");
 }
 
+/* ////// ANIMATIONS \\\\\\ */
+
 @keyframes grow {
   0% {
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
   50% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 }
 
