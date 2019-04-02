@@ -24,20 +24,20 @@ class TechnoBox extends Box {
 
     //console.log(type);
 
-    switch (type) {
-      case "BEAT":
-        this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
-        break;
-      case "BASS":
-        this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
-        break;
-      case "CLAP":
-        this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
-        break;
-      case "FX":
-        this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
-        break;
-    }
+    // switch (type) {
+    //   case "BEAT":
+    //     this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
+    //     break;
+    //   case "BASS":
+    //     this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
+    //     break;
+    //   case "CLAP":
+    //     this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
+    //     break;
+    //   case "FX":
+    //     this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
+    //     break;
+    // }
   }
 }
 
@@ -48,17 +48,17 @@ class LatinBox extends Box {
     this.type = type;
     this.boxElement.style.backgroundColor = color;
 
-    switch (type) {
-      case "BEAT":
-        this.audio = new buzz.sound(MUSIC.latin.types.beat.audio);
-        break;
-      case "BASS":
-        this.audio = new buzz.sound(MUSIC.latin.types.bass.audio);
-        break;
-      case "CONGA":
-        this.audio = new buzz.sound(MUSIC.latin.types.conga.audio);
-        break;
-    }
+    // switch (type) {
+    //   case "BEAT":
+    //     this.audio = new buzz.sound(MUSIC.latin.types.beat.audio);
+    //     break;
+    //   case "BASS":
+    //     this.audio = new buzz.sound(MUSIC.latin.types.bass.audio);
+    //     break;
+    //   case "CONGA":
+    //     this.audio = new buzz.sound(MUSIC.latin.types.conga.audio);
+    //     break;
+    // }
   }
 }
 
@@ -131,12 +131,12 @@ console.log("Fx:", TECHNO_FX);
 // -------- //
 
 // CONTROLS
-document.querySelector("#play").addEventListener("click", evt => {
-  TECHNO_GROUP.loop().play();
-});
-document.querySelector("#stop").addEventListener("click", evt => {
-  TECHNO_GROUP.stop();
-});
+// document.querySelector("#play").addEventListener("click", evt => {
+//   TECHNO_GROUP.loop().play();
+// });
+// document.querySelector("#stop").addEventListener("click", evt => {
+//   TECHNO_GROUP.stop();
+// });
 
 // -------- //
 
@@ -145,17 +145,25 @@ interact(".drop-zone").dropzone({
   accept: ".box",
   ondrop: function(event) {
     console.log("Dropped in!");
-    TECHNO_GROUP.loop().play();
+    // TECHNO_GROUP.loop().play();
   },
   ondragleave: function(event) {
     console.log("Dropped out!");
-    TECHNO_GROUP.stop();
+    // TECHNO_GROUP.stop();
   }
+});
+
+var gridTarget = interact.createSnapGrid({
+  x: 70,
+  y: 70,
+  range: 5,
+  offset: { x: 5, y: 10 }
 });
 
 interact(".box").draggable({
   inertia: true,
   max: Infinity,
+  snap: { targets: [gridTarget] },
   onmove: dragMoveListener
 });
 
