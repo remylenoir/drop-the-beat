@@ -1,18 +1,15 @@
+// Properties & functions of the drop-zone
 interact(".drop-zone").dropzone({
   accept: ".box",
   ondrop: function(event) {
     console.log("Dropped in!");
-    // audioPlay();
-    TECHNO_CLAP_LOOP.loop().play();
   },
   ondragleave: function(event) {
     console.log("Dropped out!");
-    // audioStop();
-    buzz.all().stop();
   }
 });
 
-// Defining the snap
+// Defining the borders
 let gridTarget = interact.createSnapGrid({
   x: 70,
   y: 70,
@@ -20,7 +17,7 @@ let gridTarget = interact.createSnapGrid({
   offset: { x: 5, y: 10 }
 });
 
-// Element to be dragged
+// Properties and function of the dragged elements
 interact(".box").draggable({
   inertia: true,
   max: Infinity,
@@ -28,7 +25,7 @@ interact(".box").draggable({
   onmove: dragMoveListener
 });
 
-// Function ot move the object
+// Function to translate the object
 function dragMoveListener(event) {
   let target = event.target;
   // keep the dragged position in the data-x/data-y attributes
@@ -36,6 +33,7 @@ function dragMoveListener(event) {
     (y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy);
 
   // translate the element
+  // target.toggle("active");
   target.style.webkitTransform = target.style.transform = "translate(" + x + "px, " + y + "px)";
 
   // update the posiion attributes

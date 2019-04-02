@@ -3,6 +3,7 @@ const ASSETS_DIRECTORY = "assets";
 const SOUNDS_DIRECTORY = `${ASSETS_DIRECTORY}/sounds`;
 
 // DOM
+const DROP_ZONE = document.querySelector(".drop-zone");
 const BASE_ZONE = document.querySelector(".base-zone");
 
 // OBJECTS

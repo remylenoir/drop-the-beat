@@ -9,6 +9,10 @@ class Box {
     this.boxElement.classList.add(this.classBox);
     BASE_ZONE.appendChild(this.boxElement);
 
+    this.audioElement = document.createElement("audio");
+    this.audioElement.loop = true;
+    this.boxElement.appendChild(this.audioElement);
+
     if (color) {
       this.boxElement.style.backgroundColor = color;
     } else {
@@ -21,18 +25,13 @@ class TechnoBox extends Box {
   constructor(color, genre, type, audio) {
     super();
     this.type = type;
-    this.audio = audio;
     this.genre = genre;
+    this.audioElement.src = audio;
+    // this.audioElement.play();
     this.classGenre = genre.toLowerCase();
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
   }
-  // audioPlay() {
-  //   console.log("Play", this.type);
-  // }
-  // audioStop() {
-  //   console.log("Play", this.type);
-  // }
 }
 
 class LatinBox extends Box {
@@ -41,6 +40,7 @@ class LatinBox extends Box {
     this.type = type;
     this.audio = audio;
     this.genre = genre;
+    this.audioElement.src = audio;
     this.classGenre = genre.toLowerCase();
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
