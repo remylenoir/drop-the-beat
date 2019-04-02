@@ -28,18 +28,6 @@ let boxes = document.querySelectorAll(".box").forEach(box => {
       audioElement[0].currentTime = 0;
     }
 
-    // function isPlaying(audioEl) {
-    //   return !audioEl.paused;
-    // }
-
-    // function togglePause() {
-    //   if (audioElement[0].paused && audioElement[0].currentTime > 0 && !audioElement[0].ended) {
-    //     audioElement[0].play();
-    //   } else {
-    //     audioElement[0].pause();
-    //   }
-    // }
-
     if (box.classList.value.includes("active")) {
       console.log("Active > Play!");
       play();
