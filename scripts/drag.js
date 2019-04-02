@@ -3,10 +3,12 @@ interact(".drop-zone").dropzone({
   ondrop: function(event) {
     console.log("Dropped in!");
     // audioPlay();
+    TECHNO_CLAP_LOOP.loop().play();
   },
   ondragleave: function(event) {
     console.log("Dropped out!");
     // audioStop();
+    buzz.all().stop();
   }
 });
 
