@@ -7,20 +7,45 @@
 // -------- //
 
 // CONTROLS
+let metronome = new Audio();
+metronome.src = `${SOUNDS_DIRECTORY}/metronome.mp3`;
+metronome.loop = true;
+// metronome.play();
 
 // SOUND
 let boxes = document.querySelectorAll(".box").forEach(box => {
   box.addEventListener("click", evt => {
     box.classList.toggle("active");
 
+    let audioElement = box.getElementsByTagName("audio");
+
     function play() {
-      let audioElement = box.getElementsByTagName("audio");
+      // isPlaying(audioElement[0]);
       audioElement[0].play();
     }
     function stop() {
-      let audioElement = box.getElementsByTagName("audio");
       audioElement[0].pause();
       audioElement[0].currentTime = 0;
+    }
+
+    // function isPlaying(audioEl) {
+    //   return !audioEl.paused;
+    // }
+
+    // function togglePause() {
+    //   if (audioElement[0].paused && audioElement[0].currentTime > 0 && !audioElement[0].ended) {
+    //     audioElement[0].play();
+    //   } else {
+    //     audioElement[0].pause();
+    //   }
+    // }
+
+    if (box.classList.value.includes("active")) {
+      console.log("Active > Play!");
+      play();
+    } else {
+      console.log("Not active > Stop!");
+      stop();
     }
 
     // HOWLER
@@ -43,13 +68,5 @@ let boxes = document.querySelectorAll(".box").forEach(box => {
     // function speed() {
     //   sound.rate(1.3);
     // }
-
-    if (box.classList.value.includes("active")) {
-      console.log("Active > Play!");
-      play();
-    } else {
-      console.log("Not active > Stop!");
-      stop();
-    }
   });
 });
