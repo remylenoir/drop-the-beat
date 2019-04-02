@@ -49,23 +49,7 @@ body {
 .box {
   touch-action: none;
   user-select: none;
-  /* animation-name: floating;
-  animation-duration: 3s;
-  animation-iteration-count: infinite; */
 }
-
-/* 
-@keyframes floating {
-  0% {
-    transform: translateY(-10%);
-  }
-  50% {
-    transform: translateY(10%);
-  }
-  100% {
-    transform: translateY(-10%);
-  }
-} */
 
 button {
   width: 80px;

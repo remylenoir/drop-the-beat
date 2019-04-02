@@ -1,8 +1,10 @@
 class Box {
-  constructor(color, type) {
+  constructor(color, genre, type, audio) {
     this.type = type;
-    this.classBox = "box";
+    this.audio = audio;
+    this.genre = genre;
 
+    this.classBox = "box";
     this.boxElement = document.createElement("div");
     this.boxElement.classList.add(this.classBox);
     BASE_ZONE.appendChild(this.boxElement);
@@ -16,49 +18,30 @@ class Box {
 }
 
 class TechnoBox extends Box {
-  constructor(color, type) {
+  constructor(color, genre, type, audio) {
     super();
-    this.genre = MUSIC.techno.genre;
     this.type = type;
+    this.audio = audio;
+    this.genre = genre;
+    this.classGenre = genre.toLowerCase();
+    this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
 
-    //console.log(type);
-
-    // switch (type) {
-    //   case "BEAT":
-    //     this.audio = new buzz.sound(MUSIC.techno.types.beat.audio);
-    //     break;
-    //   case "BASS":
-    //     this.audio = new buzz.sound(MUSIC.techno.types.bass.audio);
-    //     break;
-    //   case "CLAP":
-    //     this.audio = new buzz.sound(MUSIC.techno.types.clap.audio);
-    //     break;
-    //   case "FX":
-    //     this.audio = new buzz.sound(MUSIC.techno.types.fx.audio);
-    //     break;
-    // }
+    new buzz.sound(this.audio);
   }
 }
 
 class LatinBox extends Box {
-  constructor(color, type) {
+  constructor(color, genre, type, audio) {
     super();
-    this.genre = MUSIC.latin.genre;
     this.type = type;
+    this.audio = audio;
+    this.classGenre = genre.toLowerCase();
+    this.genre = genre;
+    this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
 
-    // switch (type) {
-    //   case "BEAT":
-    //     this.audio = new buzz.sound(MUSIC.latin.types.beat.audio);
-    //     break;
-    //   case "BASS":
-    //     this.audio = new buzz.sound(MUSIC.latin.types.bass.audio);
-    //     break;
-    //   case "CONGA":
-    //     this.audio = new buzz.sound(MUSIC.latin.types.conga.audio);
-    //     break;
-    // }
+    new buzz.sound(this.audio);
   }
 }
 
@@ -70,11 +53,14 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 
   let color = music[1].color;
   let genre = music[1].genre;
-  let loop_type = music[1].types;
 
-  const TYPES_ARRAY = Object.entries(loop_type).map(type => {
-    const params = [color, type];
-    // const audioFile = type[1].audio;
+  let loop_types = music[1].types;
+
+  const TYPES_ARRAY = Object.entries(loop_types).map(types => {
+    let audio = types[1].audio;
+    let type = types[1].type;
+
+    const params = [color, genre, type, audio];
 
     if (genre === "TECHNO") {
       return new TechnoBox(...params);
@@ -86,7 +72,6 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 });
 
 var objectsInstances = MUSIC_ARRAY.flat();
-
 const [
   TECHNO_BEAT,
   TECHNO_BASS,
@@ -101,30 +86,9 @@ console.log("Beat:", TECHNO_BEAT);
 console.log("Bass:", TECHNO_BASS);
 console.log("Clap:", TECHNO_CLAP);
 console.log("Fx:", TECHNO_FX);
-
-// const TECHNO_BEAT = objectsInstances[0];
-// const TECHNO_BASS = objectsInstances[1];
-// const TECHNO_CLAP = objectsInstances[2];
-// const TECHNO_FX = objectsInstances[3];
-
-// Montasar
-// ^^^^^^^^
-// const array = MUSIC.map(genre => {
-//   let color = genre.color;
-//   // let bpm = genre .bpm
-//   return types.map(type => {
-//       const params = [color, type]
-//       if  (genre === "TECHNO") return new TechnoBox(...params);
-//       else if (1) //                return new LatinBox()
-
-//   })
-// })
-
-// TECHNO OBJECTS
-// const TECHNO_BEAT = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.beat.type);
-// const TECHNO_BASS = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.bass.type);
-// const TECHNO_CLAP = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.clap.type);
-// const TECHNO_FX = new TechnoBox(MUSIC.techno.color, MUSIC.techno.types.fx.type);
+console.log("Beat:", LATIN_BEAT);
+console.log("Bass:", LATIN_BASS);
+console.log("Conga:", LATIN_CONGA);
 
 // let TECHNO_GROUP = new buzz.group([TECHNO_CLAP.audio]);
 
