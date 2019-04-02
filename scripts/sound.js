@@ -18,14 +18,26 @@ let boxes = document.querySelectorAll(".box").forEach(box => {
     box.classList.toggle("active");
 
     let audioElement = box.getElementsByTagName("audio");
+    var audioFile = new Audio(`${audioElement[0].src}`);
 
     function play() {
-      // isPlaying(audioElement[0]);
-      audioElement[0].play();
+      // audioElement[0].play();
+      audioFile.addEventListener(
+        "timeupdate",
+        function() {
+          var buffer = 0.2; // for 3.8s loops (or 4 measures)
+          if (this.currentTime > this.duration - buffer) {
+            this.currentTime = 0;
+            this.play();
+          }
+        },
+        false
+      );
+      audioFile.play();
     }
     function stop() {
-      audioElement[0].pause();
       audioElement[0].currentTime = 0;
+      audioElement[0].pause();
     }
 
     if (box.classList.value.includes("active")) {
