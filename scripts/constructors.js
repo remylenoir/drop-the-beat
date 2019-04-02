@@ -11,7 +11,6 @@ class Box {
 
     this.audioElement = document.createElement("audio");
     this.audioElement.loop = true;
-    this.audioElement.classList.add("audio");
     this.boxElement.appendChild(this.audioElement);
 
     if (color) {
@@ -28,7 +27,6 @@ class TechnoBox extends Box {
     this.type = type;
     this.genre = genre;
     this.audioElement.src = audio;
-    // this.audioElement.play();
     this.classGenre = genre.toLowerCase();
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;

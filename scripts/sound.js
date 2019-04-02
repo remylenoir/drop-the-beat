@@ -7,9 +7,6 @@
 // -------- //
 
 // CONTROLS
-// document.querySelector("#stop").addEventListener("click", evt => {
-//   buzz.all().stop();
-// });
 
 // SOUND
 let boxes = document.querySelectorAll(".box").forEach(box => {
@@ -25,6 +22,27 @@ let boxes = document.querySelectorAll(".box").forEach(box => {
       audioElement[0].pause();
       audioElement[0].currentTime = 0;
     }
+
+    // HOWLER
+    // let audioElement = box.getElementsByTagName("audio");
+    // var sound = new Howl({
+    //   src: [audioElement[0].src],
+    //   loop: true
+    // });
+
+    // document.querySelector("#rate").addEventListener("click", evt => {
+    //   speed();
+    // });
+
+    // function play() {
+    //   sound.play();
+    // }
+    // function stop() {
+    //   sound.stop();
+    // }
+    // function speed() {
+    //   sound.rate(1.3);
+    // }
 
     if (box.classList.value.includes("active")) {
       console.log("Active > Play!");
