@@ -34,14 +34,15 @@ class TechnoBox extends Box {
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
     this.boxElement.style.backgroundImage = `url('${image}')`;
+    // TECHNO_ZONE.appendChild(this.boxElement);
   }
 }
 
-class LatinBox extends Box {
-  constructor(color, genre, type, audio) {
+class LatinoBox extends Box {
+  constructor(color, genre, type, image, audio) {
     super();
     this.type = type;
-    this.audio = audio;
+    this.image = image;
     this.genre = genre;
     this.audio = audio;
     this.audioElement.src = audio;
@@ -49,5 +50,22 @@ class LatinBox extends Box {
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
     this.boxElement.style.backgroundImage = `url('${image}')`;
+    // LATINO_ZONE.appendChild(this.boxElement);
+  }
+}
+
+class AcousticBox extends Box {
+  constructor(color, genre, type, image, audio) {
+    super();
+    this.type = type;
+    this.image = image;
+    this.genre = genre;
+    this.audio = audio;
+    this.audioElement.src = audio;
+    this.classGenre = genre.toLowerCase();
+    this.boxElement.classList.add(this.classGenre);
+    this.boxElement.style.backgroundColor = color;
+    this.boxElement.style.backgroundImage = `url('${image}')`;
+    // ACOUSTIC_ZONE.appendChild(this.boxElement);
   }
 }

@@ -12,11 +12,6 @@ body {
   background: linear-gradient(135deg, #0FF0B3 0%, #036ED9 100%);
 }
 
-button {
-  width: 80px;
-  height: 30px;
-}
-
 .container {
   height: 100vh;
   display: flex;
@@ -30,6 +25,40 @@ button {
   flex-direction: column;
   align-items: center;
   height: 10vh;
+  color: #fff;
+}
+
+.introduction .genre-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.introduction .genre-selector span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 50px;
+  font-size: 15px;
+  color: #000000;
+  text-align: center;
+  /* cursor: pointer;
+  border: none; */
+}
+
+.genre-techno {
+  background-color: #c3ec52
+}
+
+.genre-latino {
+  background-color: #f9664f
+}
+
+.genre-acoustic {
+  background-color: #ffb941
 }
 
 .drop-zone {
@@ -51,15 +80,45 @@ button {
   background-repeat: no-repeat;
 }
 
+.drop-zone.active {
+  animation-duration: 0.4688s;
+  /* the length of 1 beat at 128BPM */
+}
+
 .drop-zone h2 {
   font-size: 40px;
 }
 
-.base-zone {
+.base-container {
   width: 100vw;
+  min-height: 110px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  /* flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px 0; */
+  /* justify-content: space-around;
+  align-items: center; */
+}
+
+.base-zone, .techno-zone, .latino-zone, .acoustic-zone, .base-zone-back {
+  /* display: none; */
+  min-width: 80%;
+  min-height: 110px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  justify-content: space-around;
+}
+
+.base-zone>.active {
+  display: flex;
 }
 
 .box {
@@ -68,6 +127,7 @@ button {
   cursor: move;
   width: 70px;
   height: 70px;
+  margin: 10px;
   border-radius: 10px;
   background-size: 50px;
   background-repeat: no-repeat;

@@ -7,11 +7,19 @@ const SOUNDS_DIRECTORY = `${ASSETS_DIRECTORY}/sounds`;
 const DROP_ZONE = document.querySelector(".drop-zone");
 const BASE_ZONE = document.querySelector(".base-zone");
 
+const TECHNO_ZONE = document.querySelector(".techno-zone");
+const LATINO_ZONE = document.querySelector(".latino-zone");
+const ACOUSTIC_ZONE = document.querySelector(".acoustic-zone");
+
+const BUTTON_TECHNO = document.querySelector(".genre-techno");
+const BUTTON_LATINO = document.querySelector(".genre-latino");
+const BUTTON_ACOUSTIC = document.querySelector(".genre-acoustic");
+
 // OBJECTS
 const MUSIC = {
   techno: {
     genre: "TECHNO",
-    color: "#79e18f",
+    color: "#c3ec52",
     types: {
       beat: {
         type: "BEAT",
@@ -34,24 +42,57 @@ const MUSIC = {
         audio: `${SOUNDS_DIRECTORY}/techno-fx.mp3`
       }
     }
+  },
+  latino: {
+    genre: "LATINO",
+    color: "#ff7863",
+    types: {
+      beat: {
+        type: "BEAT",
+        image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
+        audio: `${SOUNDS_DIRECTORY}/latino-beat.mp3`
+      },
+      maracas: {
+        type: "MARACAS",
+        image: `${IMAGE_DIRECTORY}/icon-maracas.svg`,
+        audio: `${SOUNDS_DIRECTORY}/latino-maracas.mp3`
+      },
+      conga: {
+        type: "CONGA",
+        image: `${IMAGE_DIRECTORY}/icon-conga.svg`,
+        audio: `${SOUNDS_DIRECTORY}/latino-conga.mp3`
+      },
+      triangle: {
+        type: "TRIANGLE",
+        image: `${IMAGE_DIRECTORY}/icon-triangle.svg`,
+        audio: `${SOUNDS_DIRECTORY}/latino-triangle.mp3`
+      }
+    }
+  },
+  acoustic: {
+    genre: "ACOUSTIC",
+    color: "#ffb941",
+    types: {
+      beat: {
+        type: "BEAT",
+        image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
+        audio: `${SOUNDS_DIRECTORY}/acoustic-beat.mp3`
+      },
+      bass: {
+        type: "BASS",
+        image: `${IMAGE_DIRECTORY}/icon-bass.svg`,
+        audio: `${SOUNDS_DIRECTORY}/acoustic-bass.mp3`
+      },
+      guitar: {
+        type: "GUITAR",
+        image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
+        audio: `${SOUNDS_DIRECTORY}/acoustic-guitar.mp3`
+      },
+      lead: {
+        type: "LEAD",
+        image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
+        audio: `${SOUNDS_DIRECTORY}/acoustic-lead-guitar.mp3`
+      }
+    }
   }
-  // ,
-  // latin: {
-  //   genre: "LATIN",
-  //   color: "#e17983",
-  //   types: {
-  //     beat: {
-  //       type: "BEAT",
-  //       audio: `${SOUNDS_DIRECTORY}/latin-beat.mp3`
-  //     },
-  //     bass: {
-  //       type: "BASS",
-  //       audio: `${SOUNDS_DIRECTORY}/latin-bass.mp3`
-  //     },
-  //     conga: {
-  //       type: "CONGA",
-  //       audio: `${SOUNDS_DIRECTORY}/latin-conga.mp3`
-  //     }
-  //   }
-  // }
 };

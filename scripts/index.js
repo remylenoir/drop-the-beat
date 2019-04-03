@@ -19,10 +19,11 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 
     if (genre === "TECHNO") {
       return new TechnoBox(...params);
+    } else if (genre === "LATINO") {
+      return new LatinoBox(...params);
+    } else if (genre === "ACOUSTIC") {
+      return new AcousticBox(...params);
     }
-    // else if (genre === "LATIN") {
-    //   return new LatinBox(...params);
-    // }
   });
   return TYPES_ARRAY;
 });
@@ -30,4 +31,4 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 // Flattening of the Array in order to be destructured
 // let objectsInstances = MUSIC_ARRAY.flat();
 // Destructuring the Array - THE CONST ORDER MATTERS !!!
-const [TECHNO_BEAT, TECHNO_BASS, TECHNO_CLAP, TECHNO_FX] = MUSIC_ARRAY[0];
+// const [TECHNO_BEAT, TECHNO_BASS, TECHNO_CLAP, TECHNO_FX] = MUSIC_ARRAY[0];

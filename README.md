@@ -13,9 +13,10 @@
 
 ## Icons Credits:
 
-- Drum: made by [Freepik](https://www.freepik.com/)
+- Drum, Maracas, Bass, Guitars: made by [Freepik](https://www.freepik.com/)
 - Synthetiser: made by [Eucalyp](https://www.flaticon.com/authors/eucalyp)
-- Clapping hands: made by [Smashicons](https://www.flaticon.com/authors/smashicons)
+- Clapping hands, Triangle: made by [Smashicons](https://www.flaticon.com/authors/smashicons)
 - Pulse: made by [Prosymbols](https://www.flaticon.com/authors/prosymbols)
+- Conga: made by [Iconnice](https://www.flaticon.com/authors/iconnice)
 
 _Creative Commons BY 3.0_

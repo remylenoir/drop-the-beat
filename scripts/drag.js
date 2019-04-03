@@ -6,10 +6,10 @@ document.addEventListener("drag", function(event) {}, false);
 document.addEventListener(
   "dragstart",
   function(event) {
+    event.target.classList.toggle("active");
     // store a ref. on the dragged elem
     dragged = event.target;
     // make it half transparent
-    event.target.classList.toggle("active");
     event.target.style.opacity = 0.5;
   },
   false
@@ -82,9 +82,8 @@ document.addEventListener(
     event.preventDefault();
     // move dragged elem to the selected drop target
     if (event.target.className != "drop-zone") {
-      event.target.style.background = "";
       dragged.parentNode.removeChild(dragged);
-      BASE_ZONE.appendChild(dragged);
+      event.target.appendChild(dragged);
       getBox();
     }
   },
