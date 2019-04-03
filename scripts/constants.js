@@ -85,7 +85,7 @@ const MUSIC = {
       },
       guitar: {
         type: "GUITAR",
-        image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
+        image: `${IMAGE_DIRECTORY}/icon-guitar-2.svg`,
         audio: `${SOUNDS_DIRECTORY}/acoustic-guitar.mp3`
       },
       lead: {
