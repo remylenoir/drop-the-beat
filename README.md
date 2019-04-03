@@ -1,15 +1,12 @@
 # DROP THE BEAT
 
-<!-- ## Libraries used
-- [Interact.js](http://interactjs.io/) : to drag & move the elements
-- [Buzz.js](http://buzz.jaysalvat.com/) : to handle the sounds' synch playback -->
-
 ## Problems faced:
 
-- Drag & Drop elements, [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
 - Automate the creation of every instances from one input Object
 - Automate the creation and the assignation of every audio elements for each instance
-- Sounds' synch playback
+- Drag & Drop elements: solution = [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
+- HTML5 audio loops have a break between each loop: solution = [creation of a buffer function](https://stackoverflow.com/a/36720740)
+- Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new element, the playback starts from the currentTime of the previous element.
 
 ## Icons Credits:
 
