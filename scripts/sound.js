@@ -1,10 +1,10 @@
-let activeBoxes = 0;
+// let activeBoxes = 0;
 
 function getBox() {
   document.querySelectorAll(".box").forEach(box => {
     const audioElement = box.getElementsByTagName("audio");
 
-    // Cue-ing the next element based on the first element playing
+    // Cue-ing the dropped element based on the first element currentTime
     function playAudio() {
       if (document.querySelectorAll(".active").length < 1) {
         audioElement[0].currentTime = 0;
@@ -15,12 +15,11 @@ function getBox() {
         audioElement[0].currentTime = audioCurrentTime;
         audioElement[0].play();
       }
-      // console.log(audioElement[0].currentTime);
 
       // Gapless loop "polyfill"
       audioElement[0].addEventListener("timeupdate", function() {
-        var buffer = 0.22; // for 3.8s loops (or 4 measures)
-        if (this.currentTime > this.duration - buffer) {
+        const BUFFER = 0.22; // for 3.8s loops (or 4 measures)
+        if (this.currentTime > this.duration - BUFFER) {
           this.currentTime = 0;
           this.play();
         }
@@ -49,23 +48,3 @@ function getBox() {
     // }
   });
 }
-
-// BUTTON_TECHNO.onclick = function() {
-//   TECHNO_ZONE.classList.toggle("active");
-//   LATINO_ZONE.classList.remove("active");
-//   ACOUSTIC_ZONE.classList.remove("active");
-// };
-
-// BUTTON_LATINO.onclick = function() {
-//   TECHNO_ZONE.classList.remove("active");
-//   LATINO_ZONE.classList.toggle("active");
-//   ACOUSTIC_ZONE.classList.remove("active");
-//   getBox();
-// };
-
-// BUTTON_ACOUSTIC.onclick = function() {
-//   TECHNO_ZONE.classList.remove("active");
-//   LATINO_ZONE.classList.remove("active");
-//   ACOUSTIC_ZONE.classList.toggle("active");
-//   getBox();
-// };

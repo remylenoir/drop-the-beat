@@ -20,6 +20,8 @@ body {
   justify-content: space-around;
 }
 
+/* ////// TITLE - DESC - LABELS \\\\\\ */
+
 .introduction {
   display: flex;
   flex-direction: column;
@@ -28,13 +30,13 @@ body {
   color: #fff;
 }
 
-.introduction .genre-selector {
+.introduction .labels {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.introduction .genre-selector span {
+.introduction .labels .label {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,23 +45,24 @@ body {
   height: 30px;
   border-radius: 50px;
   font-size: 15px;
+  font-weight: 500;
   color: #000000;
   text-align: center;
-  /* cursor: pointer;
-  border: none; */
 }
 
-.genre-techno {
+.label-techno {
   background-color: #c3ec52
 }
 
-.genre-latino {
+.label-latino {
   background-color: #f9664f
 }
 
-.genre-acoustic {
+.label-acoustic {
   background-color: #ffb941
 }
+
+/* ////// DROP-ZONE \\\\\\ */
 
 .drop-zone {
   display: flex;
@@ -89,6 +92,8 @@ body {
   font-size: 40px;
 }
 
+/* ////// BASE-ZONE \\\\\\ */
+
 .base-container {
   width: 100vw;
   min-height: 110px;
@@ -96,17 +101,11 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px 0; */
-  /* justify-content: space-around;
-  align-items: center; */
 }
 
-.base-zone, .techno-zone, .latino-zone, .acoustic-zone, .base-zone-back {
-  /* display: none; */
-  min-width: 80%;
-  min-height: 110px;
+.base-zone {
+  width: 80%;
+  min-height: 130px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -117,9 +116,7 @@ body {
   justify-content: space-around;
 }
 
-.base-zone>.active {
-  display: flex;
-}
+/* ////// BOX ELEMENTS \\\\\\ */
 
 .box {
   touch-action: none;
@@ -132,14 +129,12 @@ body {
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  /* background-image: url("../assets/images/play.png"); */
 }
 
 .box.active {
   animation-duration: 2s;
   animation-name: glow;
   animation-iteration-count: infinite;
-  /* background-image: url("../assets/images/pause.png"); */
 }
 
 /* ////// ANIMATIONS \\\\\\ */

@@ -1,4 +1,4 @@
-var dragged;
+let dragged;
 
 /* events fired on the draggable target */
 document.addEventListener("drag", function(event) {}, false);

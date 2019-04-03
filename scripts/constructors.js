@@ -34,7 +34,6 @@ class TechnoBox extends Box {
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
     this.boxElement.style.backgroundImage = `url('${image}')`;
-    // TECHNO_ZONE.appendChild(this.boxElement);
   }
 }
 
@@ -50,7 +49,6 @@ class LatinoBox extends Box {
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
     this.boxElement.style.backgroundImage = `url('${image}')`;
-    // LATINO_ZONE.appendChild(this.boxElement);
   }
 }
 
@@ -66,6 +64,5 @@ class AcousticBox extends Box {
     this.boxElement.classList.add(this.classGenre);
     this.boxElement.style.backgroundColor = color;
     this.boxElement.style.backgroundImage = `url('${image}')`;
-    // ACOUSTIC_ZONE.appendChild(this.boxElement);
   }
 }

@@ -15,7 +15,7 @@ const BUTTON_TECHNO = document.querySelector(".genre-techno");
 const BUTTON_LATINO = document.querySelector(".genre-latino");
 const BUTTON_ACOUSTIC = document.querySelector(".genre-acoustic");
 
-// OBJECTS
+// MAIN OBJECT
 const MUSIC = {
   techno: {
     genre: "TECHNO",
