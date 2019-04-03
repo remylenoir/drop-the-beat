@@ -1,41 +1,92 @@
-// Properties & functions of the drop-zone
-interact(".drop-zone").dropzone({
-  accept: ".box",
-  ondrop: function(event) {
-    console.log("Dropped in!");
+var dragged;
+
+/* events fired on the draggable target */
+document.addEventListener("drag", function(event) {}, false);
+
+document.addEventListener(
+  "dragstart",
+  function(event) {
+    // store a ref. on the dragged elem
+    dragged = event.target;
+    // make it half transparent
+    event.target.classList.toggle("active");
+    event.target.style.opacity = 0.5;
   },
-  ondragleave: function(event) {
-    console.log("Dropped out!");
-  }
-});
+  false
+);
 
-// Defining the borders
-let gridTarget = interact.createSnapGrid({
-  x: 70,
-  y: 70,
-  range: 5,
-  offset: { x: 5, y: 10 }
-});
+document.addEventListener(
+  "dragend",
+  function(event) {
+    // reset the transparency
+    event.target.style.opacity = "";
+  },
+  false
+);
 
-// Properties and function of the dragged elements
-interact(".box").draggable({
-  inertia: true,
-  max: Infinity,
-  snap: { targets: [gridTarget] },
-  onmove: dragMoveListener
-});
+/* events fired on the drop targets */
+document.addEventListener(
+  "dragover",
+  function(event) {
+    // prevent default to allow drop
+    event.preventDefault();
+  },
 
-// Function to translate the object
-function dragMoveListener(event) {
-  let target = event.target;
-  // keep the dragged position in the data-x/data-y attributes
-  (x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx),
-    (y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy);
+  false
+);
 
-  // translate the element
-  target.style.webkitTransform = target.style.transform = "translate(" + x + "px, " + y + "px)";
+document.addEventListener(
+  "dragenter",
+  function(event) {
+    // highlight potential drop target when the draggable element enters it
+    if (event.target.className == "drop-zone") {
+      event.target.style.background = "purple";
+    }
+  },
+  false
+);
 
-  // update the posiion attributes
-  target.setAttribute("data-x", x);
-  target.setAttribute("data-y", y);
-}
+document.addEventListener(
+  "dragleave",
+  function(event) {
+    // reset background of potential drop target when the draggable element leaves it
+    if (event.target.className == "drop-zone") {
+      event.target.style.background = "";
+    }
+  },
+  false
+);
+
+// Dropping elements in
+document.addEventListener(
+  "drop",
+  function(event) {
+    // prevent default action (open as link for some elements)
+    event.preventDefault();
+    // move dragged elem to the selected drop target
+    if (event.target.className == "drop-zone") {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild(dragged);
+      event.target.appendChild(dragged);
+      getBox();
+    }
+  },
+  false
+);
+
+// Dropping elements out
+document.addEventListener(
+  "drop",
+  function(event) {
+    // prevent default action (open as link for some elements)
+    event.preventDefault();
+    // move dragged elem to the selected drop target
+    if (event.target.className != "drop-zone") {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild(dragged);
+      BASE_ZONE.appendChild(dragged);
+      getBox();
+    }
+  },
+  false
+);
