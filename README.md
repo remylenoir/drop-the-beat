@@ -1,8 +1,29 @@
 # DROP THE BEAT
 
+**Notice: This web experiment is only working with Google Chrome**
+
 ## Problems faced:
 
 - Automate the creation of every instances from one input Object
+
+```javascript
+const MUSIC = {
+  techno: {
+    genre: "TECHNO",
+    color: "#c3ec52",
+    types: {
+      beat: {
+        type: "BEAT",
+        image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
+        audio: `${SOUNDS_DIRECTORY}/techno-beat.mp3`
+      },
+      bass: {
+        type: "SYNTH",
+        image: `${IMAGE_DIRECTORY}/icon-synth.svg`,
+        audio: `${SOUNDS_DIRECTORY}/techno-synth.mp3`
+      } // ... and so on
+```
+
 - Automate the creation and the assignation of every audio elements for each instance
 - Drag & Drop elements: solution = [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
 - HTML5 audio loops have a break between each loop: solution = [creation of a buffer function](https://stackoverflow.com/a/36720740)

@@ -41,8 +41,8 @@ document.querySelectorAll(".box").forEach(box => {
 });
 
 function myFunction() {
-  const NOTICE = `This web experiment is only working on Google Chrome, 
-  please switch to Chrome or download it :).`;
+  const NOTICE = `This web experiment is only working with Google Chrome, 
+  please switch to Google Chrome or download it :).`;
 
   let noticeMessage = document.createElement("h3");
   let noticeContainer = document.querySelector(".chrome-notice");
