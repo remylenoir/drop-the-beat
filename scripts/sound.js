@@ -32,8 +32,11 @@ function getBox() {
     }
 
     if (box.classList.value.includes("active")) {
+      box.classList.add("dropped");
       playAudio();
     } else {
+      box.classList.remove("active");
+      box.classList.remove("dropped");
       stopAudio();
     }
 

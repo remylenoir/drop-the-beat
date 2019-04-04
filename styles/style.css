@@ -13,7 +13,6 @@ body {
 }
 
 .container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,10 +70,10 @@ body {
   justify-content: space-around;
   align-items: center;
   color: #c2c2c2;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   margin: 40px 0;
-  border-radius: 200px;
+  border-radius: 175px;
   background-color: #ffffff;
   animation-name: grow;
   animation-duration: 3s;
@@ -123,11 +122,11 @@ body {
   touch-action: none;
   user-select: none;
   cursor: move;
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   margin: 10px;
   border-radius: 10px;
-  background-size: 50px;
+  background-size: 40px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -136,6 +135,12 @@ body {
   animation-duration: 2s;
   animation-name: glow;
   animation-iteration-count: infinite;
+}
+
+.box.dropped {
+  width: 55px;
+  height: 55px;
+  background-size: 30px;
 }
 
 /* ////// ANIMATIONS \\\\\\ */
