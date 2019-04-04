@@ -2,12 +2,15 @@
 
 **Notice: This web experiment is only working with Google Chrome.**
 
+---
+
 ## Problems faced:
 
 - Automate the creation of the music boxes for all genres,
 - Automate the creation + the assignation of the audio elements to their music boxes:
 
 Every music box is automatically created from one core Object.
+
 I've mapped the keys/values in order to assign the values as arguments in my constructors.
 
 Core Object:
@@ -48,7 +51,12 @@ class TechnoBox extends Box {
 }
 ```
 
-- Drag & Drop elements: I've first tried different libraries (jQuery UI, Interact.js, GSAP) to finally go for the native DOM events. [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
+---
+
+Drag & Drop elements: I've first tried different libraries (jQuery UI, Interact.js, GSAP) to finally go for the native DOM events. [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
+
+---
+
 - Remove the gap between each loop of the HTML5 audio elements: [creation of a buffer function](https://stackoverflow.com/a/36720740)
 
 ```javascript
@@ -61,8 +69,11 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 });
 ```
 
+---
+
 - Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new music box, the playback starts from the currentTime of the previous element.
 
+---
 
 ## Icons Credits:
 
