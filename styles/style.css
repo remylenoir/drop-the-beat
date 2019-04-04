@@ -28,15 +28,16 @@ body {
   align-items: center;
   height: 10vh;
   color: #fff;
+  margin-top: 30px;
 }
 
-.introduction .labels {
+.labels {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.introduction .labels .label {
+.labels .label {
   display: flex;
   justify-content: center;
   align-items: center;
