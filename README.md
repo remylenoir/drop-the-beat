@@ -1,16 +1,17 @@
 # DROP THE BEAT
 
-**Notice: This web experiment is only working with Google Chrome.**
+**Notice: This is a web experiment that only works with Google Chrome.**
 
 ---
 
-## Problems faced:
+## Challenges:
 
-- Automate the creation of the music boxes for all genres,
+### Code structure and automation for better scalability
+
+- Automate the creation of the music boxes for all genres
 - Automate the creation + the assignation of the audio elements to their music boxes:
 
 Every music box is automatically created from one core Object.
-I've mapped the keys/values in order to assign the values as arguments in my constructors.
 
 Core Object:
 ```javascript
@@ -30,6 +31,28 @@ const MUSIC = {
         audio: `${SOUNDS_DIRECTORY}/techno-synth.mp3`
       }
     // ... and so on
+```
+
+I've mapped the keys/values in order to assign the values as arguments in my constructors.
+
+Mapping of the values
+```javascript
+const TYPES_ARRAY = Object.entries(loop_types).map(types => {
+    let audio = types[1].audio;
+    let type = types[1].type;
+    let image = types[1].image;
+
+    const PARAMS = [color, genre, type, image, audio];
+
+    if (genre === "TECHNO") {
+      return new TechnoBox(...PARAMS);
+    } else if (genre === "LATINO") {
+      return new LatinoBox(...PARAMS);
+    } else if (genre === "ROCK") {
+      return new RockBox(...PARAMS);
+    }
+  });
+  return TYPES_ARRAY;
 ```
 
 Constructor:
@@ -52,11 +75,22 @@ class TechnoBox extends Box {
 
 ---
 
-Drag & Drop elements: I've first tried different libraries (jQuery UI, Interact.js, GSAP) to finally go for the native DOM events. [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
+### Draggable elements
+
+- Drag & Drop elements:
+
+For a better user experience I wanted the user to drag the music element and drop it into the "Drop Zone".
+I've first tried different libraries (jQuery UI Draggable/Droppable, Interact.js, GSAP...) to finally go for the native DOM events, that was giving me more flexibility and a better performance.
+More info on [the MDN - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events).
 
 ---
 
-- Remove the gap between each loop of the HTML5 audio elements: [creation of a buffer function](https://stackoverflow.com/a/36720740)
+### Audio issues
+
+- Audio loop gap:
+
+When you loop a HTML5 audio element, a small gap is happening between each loop.
+To remove this gap, I added an Event Listener on my audio elements, that resets the Current Time of the track with a calculation based on a buffer value. I found this solution on [Stackoverflow - creation of a buffer function](https://stackoverflow.com/a/36720740).
 
 ```javascript
 AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
@@ -68,9 +102,15 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 });
 ```
 
----
+- Sounds' synch playback:
 
-- Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new music box, the playback starts from the currentTime of the previous element.
+The main functionality of the game is playing various audio files at the same time, thus, they need to be synchronized. I created loops with same length and tempo (128bpm) using [GarageBand](https://fr.wikipedia.org/wiki/GarageBand) app, then with calculation, each time a new music box is dropped, the playback is "reset" and starts again from the Current Time of the previous element.
+
+```javascript
+let audioCurrentTime = document.querySelectorAll(".active")[0].querySelector("audio").currentTime;
+  AUDIO_ELEMENT[0].currentTime = audioCurrentTime;
+  AUDIO_ELEMENT[0].play();
+```
 
 ---
 
