@@ -35,7 +35,7 @@ body {
   text-shadow: 3px 3px 0px rgba(21, 21, 77, .8);
   animation: text-beat;
   animation-duration: 0.4688s;
-  animation-iteration-count: 4;
+  animation-iteration-count: 6;
   transform: scale(1)
 }
 
@@ -65,7 +65,7 @@ body {
   background-color: #ffffff;
   animation-name: grow;
   animation-duration: 3s;
-  animation-delay: 2.3s;
+  animation-delay: 3s;
   animation-iteration-count: infinite;
   background-image: url("../assets/images/drop-zone.png");
   background-position: center;
