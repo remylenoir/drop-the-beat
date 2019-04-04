@@ -1,6 +1,10 @@
 # DROP THE BEAT
 
-**Notice: This is a web experiment that only works with Google Chrome.**
+**Notice: This is a web experiment which only works with Google Chrome.**
+
+Drop The Beat is a music experience game that makes you become a great DJ!
+
+PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/)
 
 ---
 
@@ -12,8 +16,6 @@
 - Automate the creation + the assignation of the audio elements to their music boxes:
 
 Every music box is automatically created from one core Object.
-
-Core Object:
 ```javascript
 const MUSIC = {
   techno: {
@@ -34,8 +36,6 @@ const MUSIC = {
 ```
 
 I've mapped the keys/values in order to assign the values as arguments in my constructors.
-
-Mapping of the values
 ```javascript
 const TYPES_ARRAY = Object.entries(loop_types).map(types => {
     let audio = types[1].audio;
@@ -55,7 +55,7 @@ const TYPES_ARRAY = Object.entries(loop_types).map(types => {
   return TYPES_ARRAY;
 ```
 
-Constructor:
+Every value is then assigned in my constructor
 ```javascript
 class TechnoBox extends Box {
   constructor(color, genre, type, image, audio) {
@@ -77,7 +77,7 @@ class TechnoBox extends Box {
 
 ### Draggable elements
 
-- Drag & Drop elements:
+Drag & Drop function:
 
 For a better user experience I wanted the user to drag the music element and drop it into the "Drop Zone".
 I've first tried different libraries (jQuery UI Draggable/Droppable, Interact.js, GSAP...) to finally go for the native DOM events, that was giving me more flexibility and a better performance.
@@ -87,7 +87,7 @@ More info on [the MDN - Drag & drop events](https://developer.mozilla.org/en-US/
 
 ### Audio issues
 
-- Audio loop gap:
+Audio loop gap:
 
 When you loop a HTML5 audio element, a small gap is happening between each loop.
 To remove this gap, I added an Event Listener on my audio elements, that resets the Current Time of the track with a calculation based on a buffer value. I found this solution on [Stackoverflow - creation of a buffer function](https://stackoverflow.com/a/36720740).
@@ -102,7 +102,7 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 });
 ```
 
-- Sounds' synch playback:
+Sounds' synch playback:
 
 The main functionality of the game is playing various audio files at the same time, thus, they need to be synchronized. I created loops with same length and tempo (128bpm) using [GarageBand](https://fr.wikipedia.org/wiki/GarageBand) app, then with calculation, each time a new music box is dropped, the playback is "reset" and starts again from the Current Time of the previous element.
 
