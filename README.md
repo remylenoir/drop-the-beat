@@ -10,10 +10,11 @@
 
 ## Icons Credits:
 
-- Drum, Maracas, Bass, Guitars: made by [Freepik](https://www.freepik.com/)
+- Drum, Maracas, Bass, Guitars, Earphones: made by [Freepik](https://www.freepik.com/)
 - Synthetiser: made by [Eucalyp](https://www.flaticon.com/authors/eucalyp)
 - Clapping hands, Triangle: made by [Smashicons](https://www.flaticon.com/authors/smashicons)
 - Pulse: made by [Prosymbols](https://www.flaticon.com/authors/prosymbols)
 - Conga: made by [Iconnice](https://www.flaticon.com/authors/iconnice)
+- Refresh: made by [Becris](https://www.flaticon.com/authors/becris)
 
 _Creative Commons BY 3.0_

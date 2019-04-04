@@ -11,13 +11,16 @@
   <body>
     <div class="container">
       <div class="introduction">
-        <h1>Drop The Beat</h1>
+        <h1>DROP THE BEAT</h1>
         <p style="text-align: center">
-          Drag & Drop the music elements in the "Drop Zone". <br />Feel free to mix the elements and
-          create your unique song!
+          Drag & Drop any music element in the "Drop Zone" <br />and create your unique song!
         </p>
       </div>
-      <div class="drop-zone"></div>
+      <div class="drop-container">
+        <div class="audio-ux">For a better experience, use your earphones.</div>
+        <div class="drop-zone"></div>
+        <div class="refresh-button"></div>
+      </div>
       <div class="base-container">
         <div class="labels">
           <span class="label label-techno">TECHNO</span>
@@ -26,12 +29,14 @@
         </div>
         <div class="base-zone"></div>
       </div>
+
+      <div class="chrome-notice"></div>
     </div>
 
     <script src="scripts/constants.js"></script>
     <script src="scripts/constructors.js"></script>
-    <script src="scripts/index.js"></script>
     <script src="scripts/drag.js"></script>
     <script src="scripts/sound.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

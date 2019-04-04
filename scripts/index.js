@@ -31,3 +31,37 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 // let objectsInstances = MUSIC_ARRAY.flat();
 // Destructuring the Array - THE CONST ORDER MATTERS !!!
 // const [TECHNO_BEAT, TECHNO_BASS, TECHNO_CLAP, TECHNO_FX] = MUSIC_ARRAY[0];
+
+document.querySelectorAll(".box").forEach(box => {
+  document.querySelector(".refresh-button").addEventListener("click", evt => {
+    BASE_ZONE.appendChild(box);
+    box.classList.remove("active");
+    soundPlayback();
+  });
+});
+
+function myFunction() {
+  const NOTICE = `This web experiment is only working on Google Chrome, 
+  please switch to Chrome or download it :).`;
+
+  let noticeMessage = document.createElement("h3");
+  let noticeContainer = document.querySelector(".chrome-notice");
+  noticeMessage.innerText = NOTICE;
+  noticeContainer.appendChild(noticeMessage);
+
+  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
+    noticeContainer.style.display = "flex";
+  } else if (navigator.userAgent.indexOf("Chrome") != -1) {
+  } else if (navigator.userAgent.indexOf("Safari") != -1) {
+    noticeContainer.style.display = "flex";
+  } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+    noticeContainer.style.display = "flex";
+    console.log("nope");
+  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+    //IF IE > 10
+    noticeContainer.style.display = "flex";
+  } else {
+    noticeContainer.style.display = "flex";
+  }
+}
+myFunction();

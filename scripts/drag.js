@@ -29,6 +29,19 @@ document.addEventListener(
       event.target.classList.remove("active");
       soundPlayback();
     }
+    // document.querySelectorAll(".box").forEach(box => {
+    //   let activeBoxes = box.classList.value.includes("active");
+
+    //   if (activeBoxes > 0 && activeBoxes < 2) {
+    //     console.log("Good start");
+    //   } else if (activeBoxes > 2 && activeBoxes < 4) {
+    //     console.log("Getting there");
+    //   } else if (activeBoxes > 4 && activeBoxes < 8) {
+    //     console.log("You are the master!");
+    //   } else if (activeBoxes > 8) {
+    //     console.log("Unstoppable!");
+    //   }
+    // });
   },
   false
 );
