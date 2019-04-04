@@ -1,10 +1,14 @@
 # DROP THE BEAT
 
-**Notice: This web experiment is only working with Google Chrome**
+**Notice: This web experiment is only working with Google Chrome.**
 
 ## Problems faced:
 
-- Automate the creation of every instances from one input Object
+- Automate the creation of the music boxes for all genres,
+- Automate the creation + the assignation of the audio elements to their music boxes:
+
+Every music box is automatically created from one core Object.
+I've mapped the keys/values in order to assign the values as arguments in my constructors.
 
 ```javascript
 const MUSIC = {
@@ -21,13 +25,41 @@ const MUSIC = {
         type: "SYNTH",
         image: `${IMAGE_DIRECTORY}/icon-synth.svg`,
         audio: `${SOUNDS_DIRECTORY}/techno-synth.mp3`
-      } // ... and so on
+      }
+    // ... and so on
 ```
 
-- Automate the creation and the assignation of every audio elements for each instance
-- Drag & Drop elements: solution = [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
-- HTML5 audio loops have a break between each loop: solution = [creation of a buffer function](https://stackoverflow.com/a/36720740)
-- Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new element, the playback starts from the currentTime of the previous element.
+```javascript
+class TechnoBox extends Box {
+  constructor(color, genre, type, image, audio) {
+    super();
+    this.type = type;
+    this.image = image;
+    this.genre = genre;
+    this.audio = audio;
+    this.audioElement.src = audio;
+    this.classGenre = genre.toLowerCase();
+    this.boxElement.classList.add(this.classGenre);
+    this.boxElement.style.backgroundColor = color;
+    this.boxElement.style.backgroundImage = `url('${image}')`;
+  }
+}
+```
+
+- Drag & Drop elements: I've first tried different libraries (jQuery UI, Interact.js, GSAP) to finally go for the native DOM events. [DOM - Drag & drop events](https://developer.mozilla.org/en-US/docs/Web/API/Document#Drag_drop_events)
+- Remove the gap between each loop of the HTML5 audio elements: [creation of a buffer function](https://stackoverflow.com/a/36720740)
+
+```javascript
+AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
+  const BUFFER = 0.22; // for 3.8s loops (or 4 times at 128bpm)
+  if (this.currentTime > this.duration - BUFFER) {
+    this.currentTime = 0;
+    this.play();
+  }
+});
+```
+
+- Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new music box, the playback starts from the currentTime of the previous element.
 
 ## Icons Credits:
 
