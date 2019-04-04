@@ -10,7 +10,6 @@
 - Automate the creation + the assignation of the audio elements to their music boxes:
 
 Every music box is automatically created from one core Object.
-
 I've mapped the keys/values in order to assign the values as arguments in my constructors.
 
 Core Object:
