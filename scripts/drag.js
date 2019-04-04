@@ -19,7 +19,10 @@ document.addEventListener(
   function(event) {
     // reset the transparency
     event.target.style.opacity = "";
-    if (event.target.parentNode.className == "drop-zone") {
+    if (
+      event.target.parentNode.className == "drop-zone" &&
+      !event.target.classList.value.includes("active")
+    ) {
       event.target.classList.add("active");
       soundPlayback();
     } else if (event.target.parentNode.className != "drop-zone") {
