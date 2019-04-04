@@ -19,7 +19,7 @@ body {
   justify-content: space-around;
 }
 
-/* ////// TITLE - DESC - LABELS \\\\\\ */
+/* ////// TITLE - DESC \\\\\\ */
 
 .introduction {
   display: flex;
@@ -29,6 +29,38 @@ body {
   color: #fff;
   margin-top: 30px;
 }
+
+/* ////// DROP-ZONE \\\\\\ */
+
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #c2c2c2;
+  width: 350px;
+  height: 350px;
+  margin: 40px 0;
+  border-radius: 175px;
+  background-color: #ffffff;
+  animation-name: grow;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  background-image: url("../assets/images/drop-zone.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.drop-zone.active {
+  animation-duration: 0.4688s;
+  /* the length of 1 beat at 128BPM */
+}
+
+.drop-zone h2 {
+  font-size: 40px;
+}
+
+/* ////// LABELS \\\\\\ */
 
 .labels {
   display: flex;
@@ -62,36 +94,6 @@ body {
   background-color: #ffb941
 }
 
-/* ////// DROP-ZONE \\\\\\ */
-
-.drop-zone {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: #c2c2c2;
-  width: 350px;
-  height: 350px;
-  margin: 40px 0;
-  border-radius: 175px;
-  background-color: #ffffff;
-  animation-name: grow;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  background-image: url("../assets/images/drop-zone.png");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.drop-zone.active {
-  animation-duration: 0.4688s;
-  /* the length of 1 beat at 128BPM */
-}
-
-.drop-zone h2 {
-  font-size: 40px;
-}
-
 /* ////// BASE-ZONE \\\\\\ */
 
 .base-container {
@@ -105,7 +107,7 @@ body {
 
 .base-zone {
   width: 80%;
-  min-height: 130px;
+  min-height: 120px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -135,12 +137,6 @@ body {
   animation-duration: 2s;
   animation-name: glow;
   animation-iteration-count: infinite;
-}
-
-.box.dropped {
-  width: 55px;
-  height: 55px;
-  background-size: 30px;
 }
 
 /* ////// ANIMATIONS \\\\\\ */

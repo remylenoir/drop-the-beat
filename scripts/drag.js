@@ -10,7 +10,6 @@ document.addEventListener(
     dragged = event.target;
     // make it half transparent
     event.target.style.opacity = 0.5;
-    event.target.classList.toggle("active");
   },
   false
 );
@@ -20,6 +19,13 @@ document.addEventListener(
   function(event) {
     // reset the transparency
     event.target.style.opacity = "";
+    if (event.target.parentNode.className == "drop-zone") {
+      event.target.classList.add("active");
+      soundPlayback();
+    } else if (event.target.parentNode.className != "drop-zone") {
+      event.target.classList.remove("active");
+      soundPlayback();
+    }
   },
   false
 );
@@ -31,7 +37,6 @@ document.addEventListener(
     // prevent default to allow drop
     event.preventDefault();
   },
-
   false
 );
 
@@ -40,7 +45,6 @@ document.addEventListener(
   function(event) {
     // highlight potential drop target when the draggable element enters it
     if (event.target.className == "drop-zone") {
-      // || event.target.className == "drop-zone active") {
       event.target.style.background = "purple";
     }
   },
@@ -52,15 +56,13 @@ document.addEventListener(
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
     if (event.target.className == "drop-zone") {
-      // || event.target.className == "drop-zone active") {
       event.target.style.background = "";
-      // event.target.classList.remove("active");
     }
   },
   false
 );
 
-// Dropping elements in
+// Dropping elements in the Drop-Zone
 document.addEventListener(
   "drop",
   function(event) {
@@ -68,20 +70,15 @@ document.addEventListener(
     event.preventDefault();
     // move dragged elem to the selected drop target
     if (event.target.className == "drop-zone") {
-      let boxEl = DROP_ZONE.childNodes;
-      console.log("boxel", boxEl);
-
-      // || event.target.className == "drop-zone active") {
       event.target.style.background = "";
       dragged.parentNode.removeChild(dragged);
       event.target.appendChild(dragged);
-      getBox();
     }
   },
   false
 );
 
-// Dropping elements out
+// Dropping elements out the Drop-Zone
 document.addEventListener(
   "drop",
   function(event) {
@@ -91,7 +88,6 @@ document.addEventListener(
     if (event.target.className != "drop-zone") {
       dragged.parentNode.removeChild(dragged);
       BASE_ZONE.appendChild(dragged);
-      getBox();
     }
   },
   false
