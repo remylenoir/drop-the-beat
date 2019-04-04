@@ -29,30 +29,25 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 
 // Turn on/off the lights
 let lightText = document.querySelector(".lights-on");
-
 lightText.addEventListener("click", evt => {
   if (lightText.innerText === "Lights on") {
-    DROP_ZONE.classList.toggle("active");
-    CONTAINER.classList.toggle("active");
+    // DROP_ZONE.classList.add("active");
+    CONTAINER.classList.add("active");
     lightText.innerText = "Lights off";
   } else {
-    DROP_ZONE.classList.toggle("active");
-    CONTAINER.classList.toggle("active");
+    // DROP_ZONE.classList.remove("active");
+    CONTAINER.classList.remove("active");
     lightText.innerText = "Lights on";
   }
 });
 
-// Refresh the experience
+// Reset the experience
 document.querySelectorAll(".box").forEach(box => {
   document.querySelector(".refresh-button").addEventListener("click", evt => {
     BASE_ZONE.appendChild(box);
-    DROP_ZONE.classList.remove("active");
+    // DROP_ZONE.classList.remove("active");
     CONTAINER.classList.remove("active");
-    if (lightText.innerText === "Lights on") {
-      lightText.innerText = "Lights off";
-    } else {
-      lightText.innerText = "Lights on";
-    }
+    lightText.innerText = "Lights on";
     box.classList.remove("active");
     soundPlayback();
   });
