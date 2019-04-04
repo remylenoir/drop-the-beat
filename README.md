@@ -10,6 +10,7 @@
 Every music box is automatically created from one core Object.
 I've mapped the keys/values in order to assign the values as arguments in my constructors.
 
+Core Object:
 ```javascript
 const MUSIC = {
   techno: {
@@ -29,6 +30,7 @@ const MUSIC = {
     // ... and so on
 ```
 
+Constructor:
 ```javascript
 class TechnoBox extends Box {
   constructor(color, genre, type, image, audio) {
@@ -60,6 +62,7 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 ```
 
 - Sounds' synch playback: solution = all the audio files have the same lenght/tempo + with some calculation, each time we drop a new music box, the playback starts from the currentTime of the previous element.
+
 
 ## Icons Credits:
 
