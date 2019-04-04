@@ -9,11 +9,11 @@ const BASE_ZONE = document.querySelector(".base-zone");
 
 const TECHNO_ZONE = document.querySelector(".techno-zone");
 const LATINO_ZONE = document.querySelector(".latino-zone");
-const ACOUSTIC_ZONE = document.querySelector(".acoustic-zone");
+const ROCK_ZONE = document.querySelector(".rock-zone");
 
 const BUTTON_TECHNO = document.querySelector(".genre-techno");
 const BUTTON_LATINO = document.querySelector(".genre-latino");
-const BUTTON_ACOUSTIC = document.querySelector(".genre-acoustic");
+const BUTTON_ROCK = document.querySelector(".genre-rock");
 
 // MAIN OBJECT
 const MUSIC = {
@@ -69,29 +69,29 @@ const MUSIC = {
       }
     }
   },
-  acoustic: {
-    genre: "ACOUSTIC",
+  rock: {
+    genre: "ROCK",
     color: "#ffb941",
     types: {
       beat: {
         type: "BEAT",
         image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
-        audio: `${SOUNDS_DIRECTORY}/acoustic-beat.mp3`
+        audio: `${SOUNDS_DIRECTORY}/rock-beat.mp3`
       },
       bass: {
         type: "BASS",
         image: `${IMAGE_DIRECTORY}/icon-bass.svg`,
-        audio: `${SOUNDS_DIRECTORY}/acoustic-bass.mp3`
+        audio: `${SOUNDS_DIRECTORY}/rock-bass.mp3`
       },
       guitar: {
         type: "GUITAR",
         image: `${IMAGE_DIRECTORY}/icon-guitar-2.svg`,
-        audio: `${SOUNDS_DIRECTORY}/acoustic-guitar.mp3`
+        audio: `${SOUNDS_DIRECTORY}/rock-guitar.mp3`
       },
       lead: {
         type: "LEAD",
         image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
-        audio: `${SOUNDS_DIRECTORY}/acoustic-lead-guitar.mp3`
+        audio: `${SOUNDS_DIRECTORY}/rock-lead-guitar.mp3`
       }
     }
   }

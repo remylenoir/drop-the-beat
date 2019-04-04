@@ -20,8 +20,8 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
       return new TechnoBox(...PARAMS);
     } else if (genre === "LATINO") {
       return new LatinoBox(...PARAMS);
-    } else if (genre === "ACOUSTIC") {
-      return new AcousticBox(...PARAMS);
+    } else if (genre === "ROCK") {
+      return new RockBox(...PARAMS);
     }
   });
   return TYPES_ARRAY;

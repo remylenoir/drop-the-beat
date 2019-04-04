@@ -52,7 +52,7 @@ class LatinoBox extends Box {
   }
 }
 
-class AcousticBox extends Box {
+class RockBox extends Box {
   constructor(color, genre, type, image, audio) {
     super();
     this.type = type;
