@@ -1,4 +1,4 @@
-// Mapping of MUSIC (main Object) and storing of arguments
+// Mapping of MUSIC (core Object) and storing of the arguments
 // to automate the creation of each constructor
 
 const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
@@ -15,7 +15,7 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 
     const PARAMS = [color, genre, type, image, audio];
 
-    // Automatic creation of each element based on MUSIC (main Object)
+    // Automatic creation of each music element
     if (genre === "TECHNO") {
       return new TechnoBox(...PARAMS);
     } else if (genre === "LATINO") {
@@ -27,11 +27,7 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
   return TYPES_ARRAY;
 });
 
-// Flattening of the Array in order to be destructured
-// let objectsInstances = MUSIC_ARRAY.flat();
-// Destructuring the Array - THE CONST ORDER MATTERS !!!
-// const [TECHNO_BEAT, TECHNO_BASS, TECHNO_CLAP, TECHNO_FX] = MUSIC_ARRAY[0];
-
+// Refresh the experience
 document.querySelectorAll(".box").forEach(box => {
   document.querySelector(".refresh-button").addEventListener("click", evt => {
     BASE_ZONE.appendChild(box);
@@ -40,6 +36,7 @@ document.querySelectorAll(".box").forEach(box => {
   });
 });
 
+// Browser notice
 function myFunction() {
   const NOTICE = `This web experiment is only working with Google Chrome, 
   please switch to Google Chrome or download it :).`;

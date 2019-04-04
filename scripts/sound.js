@@ -16,7 +16,7 @@ function soundPlayback() {
 
       // Gapless loop "polyfill"
       AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
-        const BUFFER = 0.22; // for 3.8s loops (or 4 measures)
+        const BUFFER = 0.22; // for 3.8s loops (or 4 times at 128bpm)
         if (this.currentTime > this.duration - BUFFER) {
           this.currentTime = 0;
           this.play();
