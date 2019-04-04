@@ -14,8 +14,8 @@ PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/)
 
 Automate the creation of the music boxes for all genres and also the creation + the assignation of the audio elements to their music boxes.
 
-
 Every music box is automatically created from one core Object.
+
 ```javascript
 const MUSIC = {
   techno: {
@@ -35,29 +35,29 @@ const MUSIC = {
     // ... and so on
 ```
 
-
 I've mapped the keys/values in order to assign the values as arguments in the constructors.
+
 ```javascript
 const TYPES_ARRAY = Object.entries(loop_types).map(types => {
-    let audio = types[1].audio;
-    let type = types[1].type;
-    let image = types[1].image;
+  let audio = types[1].audio;
+  let type = types[1].type;
+  let image = types[1].image;
 
-    const PARAMS = [color, genre, type, image, audio];
+  const PARAMS = [color, genre, type, image, audio];
 
-    if (genre === "TECHNO") {
-      return new TechnoBox(...PARAMS);
-    } else if (genre === "LATINO") {
-      return new LatinoBox(...PARAMS);
-    } else if (genre === "ROCK") {
-      return new RockBox(...PARAMS);
-    }
-  });
-  return TYPES_ARRAY;
+  if (genre === "TECHNO") {
+    return new TechnoBox(...PARAMS);
+  } else if (genre === "LATINO") {
+    return new LatinoBox(...PARAMS);
+  } else if (genre === "ROCK") {
+    return new RockBox(...PARAMS);
+  }
+});
+return TYPES_ARRAY;
 ```
 
-
 Every value is then assigned in the constructor
+
 ```javascript
 class TechnoBox extends Box {
   constructor(color, genre, type, image, audio) {
@@ -79,7 +79,7 @@ class TechnoBox extends Box {
 
 ### Draggable elements
 
-__Drag & Drop function__
+**Drag & Drop function**
 
 For a better user experience I wanted the user to drag the music element and drop it into the "Drop Zone".
 I've first tried different libraries (jQuery UI Draggable/Droppable, Interact.js, GSAP...) to finally go for the native DOM events, that was giving me more flexibility and a better performance.
@@ -89,7 +89,7 @@ More info on [the MDN - Drag & drop events](https://developer.mozilla.org/en-US/
 
 ### Audio issues
 
-__Audio loop gap__
+**Audio loop gap**
 
 When you loop a HTML5 audio element, a small gap is happening between each loop.
 To remove this gap, I added an Event Listener on the audio elements, that resets the Current Time of the track with a calculation based on a buffer value. I found this solution on [Stackoverflow - creation of a buffer function](https://stackoverflow.com/a/36720740).
@@ -104,14 +104,14 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 });
 ```
 
-__Sounds' synch playback__
+**Sounds' synch playback**
 
 The main functionality of the game is the playback of numerous audio files at the same time, thus, they need to be synchronized. I created loops with same length and tempo (128bpm) using the [GarageBand](https://fr.wikipedia.org/wiki/GarageBand) app, then with calculation, each time a new music box is dropped, the playback is "reset" and starts again from the Current Time of the previous element.
 
 ```javascript
 let audioCurrentTime = document.querySelectorAll(".active")[0].querySelector("audio").currentTime;
-  AUDIO_ELEMENT[0].currentTime = audioCurrentTime;
-  AUDIO_ELEMENT[0].play();
+AUDIO_ELEMENT[0].currentTime = audioCurrentTime;
+AUDIO_ELEMENT[0].play();
 ```
 
 ---
@@ -124,5 +124,6 @@ let audioCurrentTime = document.querySelectorAll(".active")[0].querySelector("au
 - Pulse: made by [Prosymbols](https://www.flaticon.com/authors/prosymbols)
 - Conga: made by [Iconnice](https://www.flaticon.com/authors/iconnice)
 - Refresh: made by [Becris](https://www.flaticon.com/authors/becris)
+- Light bulb: made by [Puppets](https://www.flaticon.com/authors/puppets)
 
 _Creative Commons BY 3.0_

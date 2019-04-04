@@ -7,13 +7,7 @@ const SOUNDS_DIRECTORY = `${ASSETS_DIRECTORY}/sounds`;
 const DROP_ZONE = document.querySelector(".drop-zone");
 const BASE_ZONE = document.querySelector(".base-zone");
 
-const TECHNO_ZONE = document.querySelector(".techno-zone");
-const LATINO_ZONE = document.querySelector(".latino-zone");
-const ROCK_ZONE = document.querySelector(".rock-zone");
-
-const BUTTON_TECHNO = document.querySelector(".genre-techno");
-const BUTTON_LATINO = document.querySelector(".genre-latino");
-const BUTTON_ROCK = document.querySelector(".genre-rock");
+const CONTAINER = document.querySelector(".container");
 
 // MAIN OBJECT
 const MUSIC = {
