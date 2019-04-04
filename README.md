@@ -1,10 +1,10 @@
 # DROP THE BEAT
 
-**Notice: This is a web experiment which only works with Google Chrome.**
-
 Drop The Beat is a music experience game that makes you become a great DJ!
 
 PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/)
+
+**Notice: This is a web experiment which only works with Google Chrome.**
 
 ---
 
@@ -14,6 +14,7 @@ PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/)
 
 - Automate the creation of the music boxes for all genres
 - Automate the creation + the assignation of the audio elements to their music boxes:
+
 
 Every music box is automatically created from one core Object.
 ```javascript
@@ -35,6 +36,7 @@ const MUSIC = {
     // ... and so on
 ```
 
+
 I've mapped the keys/values in order to assign the values as arguments in my constructors.
 ```javascript
 const TYPES_ARRAY = Object.entries(loop_types).map(types => {
@@ -54,6 +56,7 @@ const TYPES_ARRAY = Object.entries(loop_types).map(types => {
   });
   return TYPES_ARRAY;
 ```
+
 
 Every value is then assigned in my constructor
 ```javascript
@@ -104,7 +107,7 @@ AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
 
 Sounds' synch playback:
 
-The main functionality of the game is playing various audio files at the same time, thus, they need to be synchronized. I created loops with same length and tempo (128bpm) using [GarageBand](https://fr.wikipedia.org/wiki/GarageBand) app, then with calculation, each time a new music box is dropped, the playback is "reset" and starts again from the Current Time of the previous element.
+The main functionality of the game is the playback of numerous audio files at the same time, thus, they need to be synchronized. I created loops with same length and tempo (128bpm) using the [GarageBand](https://fr.wikipedia.org/wiki/GarageBand) app, then with calculation, each time a new music box is dropped, the playback is "reset" and starts again from the Current Time of the previous element.
 
 ```javascript
 let audioCurrentTime = document.querySelectorAll(".active")[0].querySelector("audio").currentTime;
