@@ -92,7 +92,7 @@ More info on [the MDN - Drag & drop events](https://developer.mozilla.org/en-US/
 **Audio loop gap**
 
 When you loop a HTML5 audio element, a small gap is happening between each loop.
-To remove this gap, I added an Event Listener on the audio elements, that resets the Current Time of the track with a calculation based on a buffer value. I found this solution on [Stackoverflow - creation of a buffer function](https://stackoverflow.com/a/36720740).
+To remove this gap, I added an Event Listener on the audio elements, that resets the Current Time of the track with a calculation based on a buffer value. I found this solution on [Stackoverflow - creation of a buffer](https://stackoverflow.com/a/36720740).
 
 ```javascript
 AUDIO_ELEMENT[0].addEventListener("timeupdate", function() {
