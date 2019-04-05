@@ -118,7 +118,7 @@ AUDIO_ELEMENT[0].play();
 
 ## Icons Credits:
 
-- Drum, Maracas, Bass, Guitars, Earphones: made by [Freepik](https://www.freepik.com/)
+- Drum, Maracas, Bass, Guitars, Headphones: made by [Freepik](https://www.freepik.com/)
 - Synthesizer: made by [Eucalyp](https://www.flaticon.com/authors/eucalyp)
 - Clapping hands, Triangle: made by [Smashicons](https://www.flaticon.com/authors/smashicons)
 - Pulse: made by [Prosymbols](https://www.flaticon.com/authors/prosymbols)
