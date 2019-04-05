@@ -100,41 +100,40 @@ body {
   background-size: 50px;
 }
 
-.refresh-button {
-  width: 30px;
-  height: 30px;
-  right: -70px;
-  transform: translateY(40px);
-  transition: all ease-in-out 100ms;
-  background-image: url("../assets/images/icon-refresh.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 30px;
-}
-
-/* .refresh-button:hover, .lights-on:hover {
-  transform: scale(1.2);
-} */
-
 .refresh-button, .lights-on {
-  padding-top: 55px;
   position: absolute;
+  width: 70px;
+  right: -95px;
   font-size: 13px;
   cursor: pointer;
   text-align: center;
   color: #ffffff;
+  transition: all ease-in-out 100ms;
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
+.refresh-button {
+  height: 55px;
+  padding-top: 40px;
+  transform: translateY(50px);
+  background-image: url("../assets/images/icon-refresh.svg");
+  background-size: 30px;
+}
+
 .lights-on {
-  width: 70px;
-  right: -90px;
-  transform: translateY(-40px);
+  padding-top: 55px;
+  transform: translateY(-50px);
   background-image: url("../assets/images/icon-light.svg");
-  background-repeat: no-repeat;
-  background-position-x: center;
   background-size: 45px;
+}
+
+.refresh-button:hover {
+  transform: scale(1.2) translateY(40px);
+}
+
+.lights-on:hover {
+  transform: scale(1.2) translateY(-40px);
 }
 
 /* ////// LABELS \\\\\\ */
