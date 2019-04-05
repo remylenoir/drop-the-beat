@@ -2,9 +2,9 @@
 
 Drop The Beat is a music experience game that makes you become a great DJ!
 
-PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/)
+PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Notice:** This is a web experiment which only works with Google Chrome.
 
-**Notice: This is a web experiment which only works with Google Chrome.**
+This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en).
 
 ---
 
@@ -79,7 +79,7 @@ class TechnoBox extends Box {
 
 ### Draggable elements
 
-**Drag & Drop function**
+**Drag & Drop functionality**
 
 For a better user experience I wanted the user to drag the music element and drop it into the "Drop Zone".
 I've first tried different libraries (jQuery UI Draggable/Droppable, Interact.js, GSAP...) to finally go for the native DOM events, that was giving me more flexibility and a better performance.
