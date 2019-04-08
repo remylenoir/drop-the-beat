@@ -10,7 +10,7 @@ This game was made during the first module of the [Ironhack Web Development Boot
 **Best soundtrack:** First place :1st_place_medal:  
 **Best game:** Second place :2nd_place_medal:  
 
-__Votes from the class__
+_*Votes from the class_
 ---
 
 ## Challenges:
