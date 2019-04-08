@@ -6,11 +6,11 @@ PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Not
 
 This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en).
 
-## PRIZES
-Votes from the class:  
+## PRIZES*
 **Best soundtrack:** First place :1st_place_medal:  
-**Best game:** Second place :2nd_place_medal:
+**Best game:** Second place :2nd_place_medal:  
 
+__Votes from the class__
 ---
 
 ## Challenges:
