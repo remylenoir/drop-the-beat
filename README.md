@@ -5,8 +5,8 @@ Drop The Beat is a music experience game that makes you become a great DJ!
 PLAY : [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Notice:** This is a web experiment which only works with Google Chrome.
 
 This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en).
-**Best soundtrack:** First place :1st_place_medal:
 
+**Best soundtrack:** First place :1st_place_medal:
 **Best game:** Second place :2nd_place_medal:
 
 ---
