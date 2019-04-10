@@ -31,11 +31,9 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 let lightText = document.querySelector(".lights-on");
 lightText.addEventListener("click", evt => {
   if (lightText.innerText === "Lights on") {
-    // DROP_ZONE.classList.add("active");
     CONTAINER.classList.add("active");
     lightText.innerText = "Lights off";
   } else {
-    // DROP_ZONE.classList.remove("active");
     CONTAINER.classList.remove("active");
     lightText.innerText = "Lights on";
   }
@@ -45,7 +43,6 @@ lightText.addEventListener("click", evt => {
 document.querySelectorAll(".box").forEach(box => {
   document.querySelector(".refresh-button").addEventListener("click", evt => {
     BASE_ZONE.appendChild(box);
-    // DROP_ZONE.classList.remove("active");
     CONTAINER.classList.remove("active");
     lightText.innerText = "Lights on";
     box.classList.remove("active");
