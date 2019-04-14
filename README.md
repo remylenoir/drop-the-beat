@@ -17,7 +17,7 @@ Best game: Second place :2nd_place_medal:
 
 ###### Technologies used
 
-JavaScript, HTML & CSS.
+JavaScript (arrays, objects, events and DOM manipulation), HTML & CSS.
 
 ---
 
