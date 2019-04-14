@@ -33,7 +33,7 @@ const MUSIC = {
         image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
         audio: `${SOUNDS_DIRECTORY}/techno-beat.mp3`
       },
-      bass: {
+      synth: {
         type: "SYNTH",
         image: `${IMAGE_DIRECTORY}/icon-synth.svg`,
         audio: `${SOUNDS_DIRECTORY}/techno-synth.mp3`

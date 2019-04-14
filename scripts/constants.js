@@ -20,7 +20,7 @@ const MUSIC = {
         image: `${IMAGE_DIRECTORY}/icon-drum.svg`,
         audio: `${SOUNDS_DIRECTORY}/techno-beat.mp3`
       },
-      bass: {
+      synth: {
         type: "SYNTH",
         image: `${IMAGE_DIRECTORY}/icon-synth.svg`,
         audio: `${SOUNDS_DIRECTORY}/techno-synth.mp3`
@@ -79,12 +79,12 @@ const MUSIC = {
       },
       guitar: {
         type: "GUITAR",
-        image: `${IMAGE_DIRECTORY}/icon-guitar-2.svg`,
+        image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
         audio: `${SOUNDS_DIRECTORY}/rock-guitar.mp3`
       },
       lead: {
         type: "LEAD",
-        image: `${IMAGE_DIRECTORY}/icon-guitar.svg`,
+        image: `${IMAGE_DIRECTORY}/icon-lead-guitar.svg`,
         audio: `${SOUNDS_DIRECTORY}/rock-lead-guitar.mp3`
       }
     }
