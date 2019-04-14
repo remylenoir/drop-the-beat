@@ -51,12 +51,12 @@ document.querySelectorAll(".box").forEach(box => {
 });
 
 // Browser notice
-function myFunction() {
+function browserNotice() {
   const NOTICE = `This is a web experiment which only works with Google Chrome, 
   please switch to Google Chrome or download it :).`;
 
   let noticeMessage = document.createElement("h3");
-  let noticeContainer = document.querySelector(".chrome-notice");
+  let noticeContainer = document.querySelector(".browser-notice");
   noticeMessage.innerText = NOTICE;
   noticeContainer.appendChild(noticeMessage);
 
@@ -75,4 +75,4 @@ function myFunction() {
     noticeContainer.style.display = "flex";
   }
 }
-myFunction();
+browserNotice();
