@@ -10,8 +10,9 @@ This game was made during the first module of the [Ironhack Web Development Boot
 The goal of the game is to drag & drop music elements into the Drop Zone.  
 It is possible to drop any element together.
 
-:arrow_forward: [Click here to play](https://remylenoir.github.io/drop-the-beat/)  
-**Notice:** This is a web experiment which only works with Google Chrome.
+---
+
+:arrow_forward: [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Notice:** This is a web experiment which only works with Google Chrome.
 
 ### Prizes
 
