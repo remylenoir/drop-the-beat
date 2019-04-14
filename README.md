@@ -21,7 +21,7 @@ JavaScript, HTML & CSS.
 
 ---
 
-:arrow_forward: [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Notice:** This is a web experiment which only works with Google Chrome.
+:joystick: [Click here to play](https://remylenoir.github.io/drop-the-beat/) - **Notice:** This is a web experiment which only works with Google Chrome.
 
 ---
 
