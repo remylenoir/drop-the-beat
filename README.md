@@ -4,13 +4,14 @@
 
 **Drop The Beat is a music experience game that makes you become a great DJ!**
 
+This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en), in a time span of 4 days.
+
 The goal of the experience is to drag & drop music elements into the Drop Zone.
 It is possible to drop any element together.
 
 :arrow_forward: [Click here to play](https://remylenoir.github.io/drop-the-beat/)
-**Notice:** This is a web experiment which only works with Google Chrome.
 
-This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en), in a time span of 4 days.
+**Notice:** This is a web experiment which only works with Google Chrome.
 
 ## Prizes
 
