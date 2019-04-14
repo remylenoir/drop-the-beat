@@ -7,14 +7,14 @@ This game was made during the first module of the [Ironhack Web Development Boot
 
 ---
 
-### What the game is about?
+###### What the game is about?
 
 The goal of the game is to drag & drop music elements into the Drop Zone.  
 It is possible to drop any element together.
 
 ---
 
-### Prizes
+###### Prizes
 
 **Best soundtrack:** First place :1st_place_medal:  
 **Best game:** Second place :2nd_place_medal:
@@ -23,7 +23,7 @@ _Votes from the class_
 
 ---
 
-### Technologies used
+###### Technologies used
 
 JavaScript, HTML & CSS.
 
@@ -35,7 +35,7 @@ JavaScript, HTML & CSS.
 
 ## Challenges:
 
-### Code structure and automation for better scalability
+###### Code structure and automation for better scalability
 
 Automate the creation of the music boxes for all genres and also the creation + the assignation of the audio elements to their music boxes.
 
@@ -98,7 +98,7 @@ class TechnoBox extends Box {
 
 ---
 
-### Draggable elements
+###### Draggable elements
 
 **Drag & Drop functionality**
 
@@ -108,7 +108,7 @@ More info on [the MDN - Drag & drop events](https://developer.mozilla.org/en-US/
 
 ---
 
-### Audio issues
+###### Audio issues
 
 **Audio loop gap**
 
