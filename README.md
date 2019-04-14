@@ -41,7 +41,7 @@ const MUSIC = {
     // ... and so on
 ```
 
-I've mapped the keys/values in order to assign the values as arguments in the constructors.
+The keys/values are mapped in order to assign them as arguments in the constructors.
 
 ```javascript
 const TYPES_ARRAY = Object.entries(loop_types).map(types => {
@@ -68,10 +68,6 @@ Every value is then assigned in the constructor
 class TechnoBox extends Box {
   constructor(color, genre, type, image, audio) {
     super();
-    this.type = type;
-    this.image = image;
-    this.genre = genre;
-    this.audio = audio;
     this.audioElement.src = audio;
     this.classGenre = genre.toLowerCase();
     this.boxElement.classList.add(this.classGenre);
