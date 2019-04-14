@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Drop The Beat is a music experience game that makes you become a great DJ!
+Drop The Beat is a music experience game that makes you become a great DJ!  
 This game was made during the first module of the [Ironhack Web Development Bootcamp](https://www.ironhack.com/en), in a time span of 4 days.
 
 ###### What the game is about?
@@ -10,12 +10,10 @@ This game was made during the first module of the [Ironhack Web Development Boot
 The goal of the game is to drag & drop music elements into the Drop Zone.  
 It is possible to drop any element together.
 
-###### Prizes
+###### Prizes _(votes from the class)_
 
 Best soundtrack: First place :1st_place_medal:  
 Best game: Second place :2nd_place_medal:
-
-_Votes from the class_
 
 ###### Technologies used
 
