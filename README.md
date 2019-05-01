@@ -25,10 +25,10 @@ JavaScript (arrays, objects, events and DOM manipulation), HTML5 & CSS3.
 
 ---
 
-## Improvements:
+## Future improvements:
 
-- Make it work on any browser
-- Possibility for the user to record the creation OR save it to the device
+- Make the game work on any browser
+- Add the possibility for the user to record the creation OR to save the parameters 
 
 ## Challenges:
 
