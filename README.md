@@ -25,6 +25,11 @@ JavaScript (arrays, objects, events and DOM manipulation), HTML5 & CSS3.
 
 ---
 
+## Improvements:
+
+- Make it work on any browser
+- Possibility for the user to record the creation OR save it to the device
+
 ## Challenges:
 
 ###### Code structure and automation for better scalability
