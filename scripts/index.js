@@ -5,10 +5,10 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
   // Storing the types' values to use them in the PARAMS
   let color = music[1].color;
   let genre = music[1].genre;
-  let loop_types = music[1].types;
+  let loopTypes = music[1].types;
 
   // Mapping of the types to store the values as arguments
-  const TYPES_ARRAY = Object.entries(loop_types).map(types => {
+  const TYPES_ARRAY = Object.entries(loopTypes).map(types => {
     let audio = types[1].audio;
     let type = types[1].type;
     let image = types[1].image;
@@ -16,11 +16,11 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
     const PARAMS = [color, genre, type, image, audio];
 
     // Automatic creation of each music element
-    if (genre === "TECHNO") {
+    if (genre === 'TECHNO') {
       return new TechnoBox(...PARAMS);
-    } else if (genre === "LATINO") {
+    } else if (genre === 'LATINO') {
       return new LatinoBox(...PARAMS);
-    } else if (genre === "ROCK") {
+    } else if (genre === 'ROCK') {
       return new RockBox(...PARAMS);
     }
   });
@@ -28,24 +28,24 @@ const MUSIC_ARRAY = Object.entries(MUSIC).map(music => {
 });
 
 // Turn on/off the lights
-let lightText = document.querySelector(".lights-on");
-lightText.addEventListener("click", evt => {
-  if (lightText.innerText === "Lights on") {
-    CONTAINER.classList.add("active");
-    lightText.innerText = "Lights off";
+let lightText = document.querySelector('.lights-on');
+lightText.addEventListener('click', evt => {
+  if (lightText.innerText === 'Lights on') {
+    CONTAINER.classList.add('active');
+    lightText.innerText = 'Lights off';
   } else {
-    CONTAINER.classList.remove("active");
-    lightText.innerText = "Lights on";
+    CONTAINER.classList.remove('active');
+    lightText.innerText = 'Lights on';
   }
 });
 
 // Reset the experience
-document.querySelectorAll(".box").forEach(box => {
-  document.querySelector(".refresh-button").addEventListener("click", evt => {
+document.querySelectorAll('.box').forEach(box => {
+  document.querySelector('.refresh-button').addEventListener('click', evt => {
     BASE_ZONE.appendChild(box);
-    CONTAINER.classList.remove("active");
-    lightText.innerText = "Lights on";
-    box.classList.remove("active");
+    CONTAINER.classList.remove('active');
+    lightText.innerText = 'Lights on';
+    box.classList.remove('active');
     soundPlayback();
   });
 });
@@ -55,24 +55,25 @@ function browserNotice() {
   const NOTICE = `This is a web experiment which only works with Google Chrome, 
   please switch to Google Chrome or download it :).`;
 
-  let noticeMessage = document.createElement("h3");
-  let noticeContainer = document.querySelector(".browser-notice");
+  let noticeMessage = document.createElement('h3');
+  let noticeContainer = document.querySelector('.browser-notice');
+  let displayNotice = (noticeContainer.style.display = 'flex');
   noticeMessage.innerText = NOTICE;
   noticeContainer.appendChild(noticeMessage);
 
-  if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf("OPR")) != -1) {
-    noticeContainer.style.display = "flex";
-  } else if (navigator.userAgent.indexOf("Chrome") != -1) {
-  } else if (navigator.userAgent.indexOf("Safari") != -1) {
-    noticeContainer.style.display = "flex";
-  } else if (navigator.userAgent.indexOf("Firefox") != -1) {
-    noticeContainer.style.display = "flex";
-    console.log("nope");
-  } else if (navigator.userAgent.indexOf("MSIE") != -1 || !!document.documentMode == true) {
+  if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) != -1) {
+    displayNotice;
+  } else if (navigator.userAgent.indexOf('Chrome') != -1) {
+    noticeContainer.style.display = 'none';
+  } else if (navigator.userAgent.indexOf('Safari') != -1) {
+    displayNotice;
+  } else if (navigator.userAgent.indexOf('Firefox') != -1) {
+    displayNotice;
+  } else if (navigator.userAgent.indexOf('MSIE') != -1 || !!document.documentMode === true) {
     //IF IE > 10
-    noticeContainer.style.display = "flex";
+    displayNotice;
   } else {
-    noticeContainer.style.display = "flex";
+    displayNotice;
   }
 }
 browserNotice();
