@@ -61,15 +61,15 @@ function browserNotice() {
   noticeMessage.innerText = NOTICE;
   noticeContainer.appendChild(noticeMessage);
 
-  if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) != -1) {
+  if ((navigator.userAgent.indexOf('Opera') || navigator.userAgent.indexOf('OPR')) !== -1) {
     displayNotice;
-  } else if (navigator.userAgent.indexOf('Chrome') != -1) {
+  } else if (navigator.userAgent.indexOf('Chrome') !== -1) {
     noticeContainer.style.display = 'none';
-  } else if (navigator.userAgent.indexOf('Safari') != -1) {
+  } else if (navigator.userAgent.indexOf('Safari') !== -1) {
     displayNotice;
-  } else if (navigator.userAgent.indexOf('Firefox') != -1) {
+  } else if (navigator.userAgent.indexOf('Firefox') !== -1) {
     displayNotice;
-  } else if (navigator.userAgent.indexOf('MSIE') != -1 || !!document.documentMode === true) {
+  } else if (navigator.userAgent.indexOf('MSIE') !== -1 || !!document.documentMode === true) {
     //IF IE > 10
     displayNotice;
   } else {

@@ -1,10 +1,10 @@
 let dragged;
 
 /* events fired on the draggable target */
-document.addEventListener("drag", function(event) {}, false);
+document.addEventListener('drag', function(event) {}, false);
 
 document.addEventListener(
-  "dragstart",
+  'dragstart',
   function(event) {
     // store a ref. on the dragged elem
     dragged = event.target;
@@ -15,29 +15,29 @@ document.addEventListener(
 );
 
 document.addEventListener(
-  "dragend",
+  'dragend',
   function(event) {
     // reset the transparency
     let activeBoxArr = [];
-    event.target.style.opacity = "";
+    event.target.style.opacity = '';
     if (
-      event.target.parentNode.className == "drop-zone" &&
-      !event.target.classList.value.includes("active")
+      event.target.parentNode.className == 'drop-zone' &&
+      !event.target.classList.value.includes('active')
     ) {
-      event.target.classList.add("active");
+      event.target.classList.add('active');
       soundPlayback();
-    } else if (event.target.parentNode.className != "drop-zone") {
-      event.target.classList.remove("active");
+    } else if (event.target.parentNode.className != 'drop-zone') {
+      event.target.classList.remove('active');
       soundPlayback();
     }
-    document.querySelectorAll(".box").forEach(box => {
-      let activeBox = box.classList.value.includes("active");
+    document.querySelectorAll('.box').forEach(box => {
+      let activeBox = box.classList.value.includes('active');
 
       activeBoxArr.push(activeBox);
     });
     if (!activeBoxArr.includes(true)) {
-      lightText.innerText = "Lights on";
-      CONTAINER.classList.remove("active");
+      lightText.innerText = 'Lights on';
+      CONTAINER.classList.remove('active');
     }
   },
   false
@@ -45,7 +45,7 @@ document.addEventListener(
 
 /* events fired on the drop targets */
 document.addEventListener(
-  "dragover",
+  'dragover',
   function(event) {
     // prevent default to allow drop
     event.preventDefault();
@@ -54,22 +54,22 @@ document.addEventListener(
 );
 
 document.addEventListener(
-  "dragenter",
+  'dragenter',
   function(event) {
     // highlight potential drop target when the draggable element enters it
-    if (event.target.className == "drop-zone") {
-      event.target.style.background = "purple";
+    if (event.target.className == 'drop-zone') {
+      event.target.style.background = 'purple';
     }
   },
   false
 );
 
 document.addEventListener(
-  "dragleave",
+  'dragleave',
   function(event) {
     // reset background of potential drop target when the draggable element leaves it
-    if (event.target.className == "drop-zone") {
-      event.target.style.background = "";
+    if (event.target.className == 'drop-zone') {
+      event.target.style.background = '';
     }
   },
   false
@@ -77,17 +77,17 @@ document.addEventListener(
 
 // Dropping elements in the Drop-Zone
 document.addEventListener(
-  "drop",
+  'drop',
   function(event) {
     // prevent default action (open as link for some elements)
     event.preventDefault();
     // move dragged elem to the selected drop target
-    if (event.target.className == "drop-zone") {
-      event.target.style.background = "";
+    if (event.target.className == 'drop-zone') {
+      event.target.style.background = '';
       dragged.parentNode.removeChild(dragged);
       event.target.appendChild(dragged);
     }
-    if (event.target.className != "drop-zone") {
+    if (event.target.className != 'drop-zone') {
       dragged.parentNode.removeChild(dragged);
       BASE_ZONE.appendChild(dragged);
     }
